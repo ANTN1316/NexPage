@@ -79,173 +79,63 @@ setInterval(createShootingStar, 8000 + Math.random() * 7000);
 // PORTFÓLIO 3D - Controle e animações
 // ================================
 
-const cube = document.getElementById('portfolioCube');
 const loader = document.getElementById('loader');
 
-let currentRotation = { x: -15, y: 25 };
-let isDragging = false;
-let startPosition = { x: 0, y: 0 };
-let previousRotation = { x: -15, y: 25 };
-
-function updateCubeRotation() {
-    if (!cube) return;
-    cube.style.transform = `rotateX(${currentRotation.x}deg) rotateY(${currentRotation.y}deg)`;
-}
-
-function rotateTo(face) {
-    const rotations = {
-        'front': { x: 0, y: 0 },
-        'back': { x: 0, y: 180 },
-        'right': { x: 0, y: -90 },
-        'left': { x: 0, y: 90 },
-        'top': { x: -90, y: 0 },
-        'bottom': { x: 90, y: 0 }
-    };
-
-    const target = rotations[face];
-    if (!target) return;
-
-    currentRotation = { ...target };
-    updateCubeRotation();
-}
-
-// Expor para onclick inline
-window.rotateTo = rotateTo;
-
-// Loader + contagem
 window.addEventListener('load', () => {
     setTimeout(() => {
         if (loader) loader.classList.add('hidden');
-        animateNumbers();
+        initCubeMovement();
     }, 700);
 });
 
-function animateNumbers() {
-    const numbers = document.querySelectorAll('.stat-number');
+// Movimento aleatório dos cubos
+function initCubeMovement() {
+    const cubes = [
+        { element: document.querySelector('.cube1'), speed: 0.02, rotationX: 0, rotationY: 0 },
+        { element: document.querySelector('.cube2'), speed: 0.015, rotationX: 45, rotationY: 45 },
+        { element: document.querySelector('.cube3'), speed: 0.025, rotationX: 90, rotationY: 90 }
+    ];
 
-    numbers.forEach((num) => {
-        const target = parseInt(num.getAttribute('data-target'), 10);
-        const duration = 1700;
-        const start = 0;
-        const startTime = performance.now();
+    cubes.forEach(cube => {
+        if (!cube.element) return;
 
-        function update(currentTime) {
-            const elapsed = currentTime - startTime;
-            const progress = Math.min(elapsed / duration, 1);
+        // Posição inicial aleatória na tela visível
+        cube.x = Math.random() * (window.innerWidth - 50);
+        cube.y = Math.random() * (window.innerHeight - 50);
+        cube.dx = (Math.random() - 0.5) * cube.speed * 100; // Velocidade mais controlada
+        cube.dy = (Math.random() - 0.5) * cube.speed * 100;
 
-            const easeOut = 1 - Math.pow(1 - progress, 3);
-            const current = Math.floor(start + (target - start) * easeOut);
-
-            num.textContent = current;
-
-            if (progress < 1) {
-                requestAnimationFrame(update);
-            } else {
-                const label = num.parentElement.querySelector('.stat-label')?.textContent || '';
-                const suffix = label.includes('%') ? '%' : '';
-                num.textContent = `${target}${suffix}`;
-            }
-        }
-
-        requestAnimationFrame(update);
-    });
-}
-
-// Drag (mouse)
-if (cube) {
-    cube.addEventListener('mousedown', (e) => {
-        isDragging = true;
-        startPosition = { x: e.clientX, y: e.clientY };
-        previousRotation = { ...currentRotation };
-        cube.style.transition = 'none';
+        cube.element.style.left = cube.x + 'px';
+        cube.element.style.top = cube.y + 'px';
     });
 
-    document.addEventListener('mousemove', (e) => {
-        if (!isDragging) return;
+    function animateCubes() {
+        cubes.forEach(cube => {
+            if (!cube.element) return;
 
-        const deltaX = e.clientX - startPosition.x;
-        const deltaY = e.clientY - startPosition.y;
+            cube.x += cube.dx;
+            cube.y += cube.dy;
 
-        currentRotation.y = previousRotation.y + (deltaX * 0.5);
-        currentRotation.x = previousRotation.x - (deltaY * 0.5);
-        currentRotation.x = Math.max(-90, Math.min(90, currentRotation.x));
+            // Manter os cubos dentro da viewport (com scroll)
+            if (cube.x < 0) cube.x = window.innerWidth - 50;
+            if (cube.x > window.innerWidth - 50) cube.x = 0;
+            if (cube.y < 0) cube.y = window.innerHeight - 50;
+            if (cube.y > window.innerHeight - 50) cube.y = 0;
 
-        updateCubeRotation();
-    });
+            // Atualizar rotações 3D
+            cube.rotationX += 0.5;
+            cube.rotationY += 0.3;
 
-    document.addEventListener('mouseup', () => {
-        if (!isDragging) return;
-        isDragging = false;
-        cube.style.transition = 'transform 1s cubic-bezier(0.4, 0, 0.2, 1)';
-    });
+            cube.element.style.left = cube.x + 'px';
+            cube.element.style.top = cube.y + 'px';
+            cube.element.style.transform = `translateZ(0) rotateX(${cube.rotationX}deg) rotateY(${cube.rotationY}deg)`;
+        });
 
-    // Drag (touch)
-    cube.addEventListener('touchstart', (e) => {
-        isDragging = true;
-        const touch = e.touches[0];
-        startPosition = { x: touch.clientX, y: touch.clientY };
-        previousRotation = { ...currentRotation };
-        cube.style.transition = 'none';
-    }, { passive: true });
-
-    document.addEventListener('touchmove', (e) => {
-        if (!isDragging) return;
-        e.preventDefault();
-
-        const touch = e.touches[0];
-        const deltaX = touch.clientX - startPosition.x;
-        const deltaY = touch.clientY - startPosition.y;
-
-        currentRotation.y = previousRotation.y + (deltaX * 0.5);
-        currentRotation.x = previousRotation.x - (deltaY * 0.5);
-        currentRotation.x = Math.max(-90, Math.min(90, currentRotation.x));
-
-        updateCubeRotation();
-    }, { passive: false });
-
-    document.addEventListener('touchend', () => {
-        if (!isDragging) return;
-        isDragging = false;
-        cube.style.transition = 'transform 1s cubic-bezier(0.4, 0, 0.2, 1)';
-    });
-}
-
-// Teclado
-document.addEventListener('keydown', (e) => {
-    if (!cube) return;
-
-    switch (e.key) {
-        case 'ArrowUp': currentRotation.x -= 15; break;
-        case 'ArrowDown': currentRotation.x += 15; break;
-        case 'ArrowLeft': currentRotation.y -= 15; break;
-        case 'ArrowRight': currentRotation.y += 15; break;
-        case '1': rotateTo('front'); return;
-        case '2': rotateTo('right'); return;
-        case '3': rotateTo('left'); return;
-        case '4': rotateTo('back'); return;
-        case '5': rotateTo('top'); return;
-        case '6': rotateTo('bottom'); return;
+        requestAnimationFrame(animateCubes);
     }
 
-    currentRotation.x = Math.max(-90, Math.min(90, currentRotation.x));
-    updateCubeRotation();
-});
-
-// Orientação do dispositivo (mobile)
-if (window.DeviceOrientationEvent) {
-    window.addEventListener('deviceorientation', (e) => {
-        if (isDragging) return;
-        if (window.innerWidth >= 768) return;
-
-        const tiltX = e.beta || 0;
-        const tiltY = e.gamma || 0;
-
-        currentRotation.x = Math.max(-45, Math.min(45, tiltX * 0.5));
-        currentRotation.y = Math.max(-45, Math.min(45, tiltY * 0.5));
-
-        updateCubeRotation();
-    });
+    animateCubes();
 }
 
-console.log('🎲 Portfólio 3D carregado! Arraste ou use os botões.');
+console.log('✨ Template formal carregado com cubos em movimento.');
 
