@@ -3,19 +3,169 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>NexPage</title>
+    <title>Portfólio 3D | DEV & QA</title>
     <link rel="stylesheet" href="style.css">
-
 </head>
 <body>
-    
-    <header></header>
-    <main>
-        <h1>Bem-vindo ao NexPage</h1>
-        <p></p>
-    </main>
-    <footer></footer>
+    <!-- Cena 3D Principal -->
+    <div class="scene">
+        <div class="cube-container">
+            <!-- Cubo 3D com 6 faces -->
+            <div class="cube" id="portfolioCube">
+                <!-- FACE FRONTAL: Apresentação -->
+                <div class="face front">
+                    <div class="content">
+                        <h1>👋 Olá, eu sou <span class="highlight">[Seu Nome]</span></h1>
+                        <p class="role">Desenvolvedor & QA Engineer</p>
+                        <div class="tech-stack">
+                            <span class="badge">JavaScript</span>
+                            <span class="badge">Python</span>
+                            <span class="badge">Selenium</span>
+                            <span class="badge">Cypress</span>
+                        </div>
+                        <p class="hint">🖱️ Clique e arraste para rotacionar</p>
+                    </div>
+                </div>
+
+                <!-- FACE TRASEIRA: Sobre Mim -->
+                <div class="face back">
+                    <div class="content">
+                        <h2>🎯 Sobre Mim</h2>
+                        <p>Desenvolvedor full-stack com paixão por qualidade de software.</p>
+                        <ul class="skills-list">
+                            <li>🔧 Automação de Testes</li>
+                            <li>🚀 CI/CD Pipelines</li>
+                            <li>📊 Métricas de Qualidade</li>
+                            <li>🎨 UI/UX Testing</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- FACE DIREITA: Projetos DEV -->
+                <div class="face right">
+                    <div class="content">
+                        <h2>💻 Projetos DEV</h2>
+                        <div class="project-card">
+                            <h3>Sistema E-commerce</h3>
+                            <p>React + Node.js + MongoDB</p>
+                            <div class="progress-bar">
+                                <div class="progress" style="width: 100%"></div>
+                            </div>
+                        </div>
+                        <div class="project-card">
+                            <h3>API RESTful</h3>
+                            <p>Python Flask + PostgreSQL</p>
+                            <div class="progress-bar">
+                                <div class="progress" style="width: 95%"></div>
+                            </div>
+                        </div>
+                        <div class="project-card">
+                            <h3>Dashboard Analytics</h3>
+                            <p>Vue.js + D3.js</p>
+                            <div class="progress-bar">
+                                <div class="progress" style="width: 90%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- FACE ESQUERDA: Projetos QA -->
+                <div class="face left">
+                    <div class="content">
+                        <h2>🧪 Projetos QA</h2>
+                        <div class="qa-stats">
+                            <div class="stat-item">
+                                <span class="stat-number" data-target="1500">0</span>
+                                <span class="stat-label">Testes Automatizados</span>
+                            </div>
+                            <div class="stat-item">
+                                <span class="stat-number" data-target="99">0</span>
+                                <span class="stat-label">% Cobertura</span>
+                            </div>
+                            <div class="stat-item">
+                                <span class="stat-number" data-target="50">0</span>
+                                <span class="stat-label">Pipelines CI/CD</span>
+                            </div>
+                        </div>
+                        <div class="tools-grid">
+                            <div class="tool">Selenium</div>
+                            <div class="tool">Cypress</div>
+                            <div class="tool">Jest</div>
+                            <div class="tool">JUnit</div>
+                            <div class="tool">Postman</div>
+                            <div class="tool">JMeter</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- FACE SUPERIOR: Certificações -->
+                <div class="face top">
+                    <div class="content">
+                        <h2>🏆 Certificações</h2>
+                        <div class="cert-grid">
+                            <div class="cert-item">
+                                <div class="cert-icon">📜</div>
+                                <h4>ISTQB Foundation</h4>
+                                <p>Teste de Software</p>
+                            </div>
+                            <div class="cert-item">
+                                <div class="cert-icon">☁️</div>
+                                <h4>AWS Cloud</h4>
+                                <p>Practitioner</p>
+                            </div>
+                            <div class="cert-item">
+                                <div class="cert-icon">🔒</div>
+                                <h4>Scrum Master</h4>
+                                <p>PSM I</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- FACE INFERIOR: Contato -->
+                <div class="face bottom">
+                    <div class="content">
+                        <h2>📬 Contato</h2>
+                        <div class="contact-links">
+                            <a href="#" class="contact-btn github">
+                                <span>🐙</span> GitHub
+                            </a>
+                            <a href="#" class="contact-btn linkedin">
+                                <span>💼</span> LinkedIn
+                            </a>
+                            <a href="#" class="contact-btn email">
+                                <span>📧</span> Email
+                            </a>
+                        </div>
+                        <div class="qr-placeholder">
+                            <p>Escaneie para contato direto</p>
+                            <div class="qr-code">QR CODE</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Controles de Navegação -->
+    <div class="controls">
+        <button class="ctrl-btn" onclick="rotateTo('front')">🏠 Início</button>
+        <button class="ctrl-btn" onclick="rotateTo('right')">💻 DEV</button>
+        <button class="ctrl-btn" onclick="rotateTo('left')">🧪 QA</button>
+        <button class="ctrl-btn" onclick="rotateTo('back')">👤 Sobre</button>
+        <button class="ctrl-btn" onclick="rotateTo('top')">🏆 Certificações</button>
+        <button class="ctrl-btn" onclick="rotateTo('bottom')">📬 Contato</button>
+    </div>
+
+    <!-- Indicador de Carregamento -->
+    <div class="loader" id="loader">
+        <div class="loader-cube">
+            <div></div><div></div><div></div><div></div>
+        </div>
+        <p>Carregando Portfólio 3D...</p>
+    </div>
+
     <script src="script.js"></script>
-    
 </body>
 </html>
+
