@@ -20,7 +20,7 @@ function FeaturePanel({ tag, title, features, ctaText, image, alt }: FeaturePane
       <div className="flex flex-col lg:flex-row gap-8 lg:gap-12">
         <div className="w-full lg:w-[45%] flex flex-col justify-between gap-8">
           <div className="flex flex-col gap-6">
-            <div className="inline-flex items-center gap-1.5 bg-[#7F0AD8] rounded-full px-4 py-1 w-fit">
+            <div className="inline-flex items-center gap-1.5 bg-[#0B7A4B] rounded-full px-4 py-1 w-fit">
               <div className="w-2 h-2 rounded-full bg-[#0F0F0F]" />
               <span className="text-[#0F0F0F] text-sm font-normal">{tag}</span>
             </div>
@@ -34,7 +34,7 @@ function FeaturePanel({ tag, title, features, ctaText, image, alt }: FeaturePane
                   className="reveal flex flex-col gap-2"
                   style={{ transitionDelay: `${index * 90}ms` }}
                 >
-                  <h4 className="text-[#7F0AD8] text-lg lg:text-xl font-semibold">{feature.label}</h4>
+                  <h4 className="text-[#0B7A4B] text-lg lg:text-xl font-semibold">{feature.label}</h4>
                   <p className="text-white text-sm font-light leading-relaxed">{feature.description}</p>
                 </div>
               ))}
@@ -43,7 +43,7 @@ function FeaturePanel({ tag, title, features, ctaText, image, alt }: FeaturePane
 
           <a
             href="#contato"
-            className="inline-flex px-6 py-4 rounded-lg border border-[#7F0AD8] bg-[#7F0AD8] text-white text-base font-normal hover:bg-[#7F0AD8]/90 transition-colors w-fit"
+            className="inline-flex px-6 py-4 rounded-lg border border-[#0B7A4B] bg-[#0B7A4B] text-white text-base font-normal hover:bg-[#0B7A4B]/90 transition-colors w-fit"
           >
             {ctaText}
           </a>

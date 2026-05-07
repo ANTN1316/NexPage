@@ -3,9 +3,9 @@ import { designCards } from "@/data/landing";
 function DotsDecoration() {
   return (
     <svg width="29" height="7" viewBox="0 0 29 7" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <circle cx="3.5" cy="3.5" r="3.5" fill="#7F0AD8" />
-      <circle cx="14.5" cy="3.5" r="3.5" fill="#7F0AD8" />
-      <circle cx="25.5" cy="3.5" r="3.5" fill="#7F0AD8" />
+      <circle cx="3.5" cy="3.5" r="3.5" fill="#0B7A4B" />
+      <circle cx="14.5" cy="3.5" r="3.5" fill="#0B7A4B" />
+      <circle cx="25.5" cy="3.5" r="3.5" fill="#0B7A4B" />
     </svg>
   );
 }

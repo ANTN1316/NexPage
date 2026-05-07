@@ -23,7 +23,7 @@ export default function DigitalEra() {
                 style={{
                   fontSize: "clamp(56px, 9vw, 96px)",
                   WebkitTextStrokeWidth: "1px",
-                  WebkitTextStrokeColor: "#7F0AD8",
+                  WebkitTextStrokeColor: "#0B7A4B",
                   color: "transparent",
                 }}
               >

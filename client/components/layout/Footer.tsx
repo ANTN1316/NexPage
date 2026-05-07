@@ -7,7 +7,7 @@ export default function Footer() {
         <div className="flex flex-col md:flex-row items-center justify-between gap-8">
           <div>
             <p className="text-[#0F0F0F] text-2xl font-semibold">
-              Nex<span style={{ color: "#7F0AD8" }}>{brand.highlight}</span>
+              Nex<span style={{ color: "#0B7A4B" }}>{brand.highlight}</span>
             </p>
             <p className="text-[#0F0F0F]/60 text-sm mt-1">{brand.tagline}</p>
           </div>
@@ -23,13 +23,13 @@ export default function Footer() {
           <div className="flex items-center gap-4">
             <a
               href="#produto"
-              className="px-6 py-3 rounded-lg border border-[#7F0AD8] text-[#7F0AD8] text-sm font-normal hover:bg-[#7F0AD8]/10 transition-colors"
+              className="px-6 py-3 rounded-lg border border-[#0B7A4B] text-[#0B7A4B] text-sm font-normal hover:bg-[#0B7A4B]/10 transition-colors"
             >
               Ver demonstração
             </a>
             <a
               href="#contato"
-              className="px-6 py-3 rounded-lg border border-[#7F0AD8] bg-[#7F0AD8] text-white text-sm font-normal hover:bg-[#7F0AD8]/90 transition-colors"
+              className="px-6 py-3 rounded-lg border border-[#0B7A4B] bg-[#0B7A4B] text-white text-sm font-normal hover:bg-[#0B7A4B]/90 transition-colors"
             >
               Iniciar projeto
             </a>

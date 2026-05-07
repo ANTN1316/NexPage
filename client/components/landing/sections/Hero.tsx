@@ -41,7 +41,7 @@ export default function Hero() {
           </div>
 
           <div className="w-full lg:w-1/2 flex flex-col gap-6 reveal">
-            <div className="inline-flex w-fit items-center gap-2 rounded-full border border-[#7F0AD8]/40 bg-[#7F0AD8]/10 px-4 py-2 text-xs uppercase tracking-[0.14em] text-[#B86CFF]">
+            <div className="inline-flex w-fit items-center gap-2 rounded-full border border-[#0B7A4B]/40 bg-[#0B7A4B]/10 px-4 py-2 text-xs uppercase tracking-[0.14em] text-[#5DE3A0]">
               <span className="h-2 w-2 rounded-full bg-[#03FF88] animate-pulse" />
               estratégia, design e código
             </div>
@@ -54,13 +54,13 @@ export default function Hero() {
             <div className="flex flex-wrap items-center gap-4 mt-4">
               <a
                 href="#produto"
-                className="px-6 py-4 rounded-lg border border-[#7F0AD8] text-[#7F0AD8] text-base font-normal hover:bg-[#7F0AD8]/10 transition-colors"
+                className="px-6 py-4 rounded-lg border border-[#0B7A4B] text-[#0B7A4B] text-base font-normal hover:bg-[#0B7A4B]/10 transition-colors"
               >
                 Ver projetos
               </a>
               <a
                 href="#contato"
-                className="px-6 py-4 rounded-lg border border-[#7F0AD8] bg-[#7F0AD8] text-white text-base font-normal hover:bg-[#7F0AD8]/90 transition-colors"
+                className="px-6 py-4 rounded-lg border border-[#0B7A4B] bg-[#0B7A4B] text-white text-base font-normal hover:bg-[#0B7A4B]/90 transition-colors"
               >
                 Iniciar projeto
               </a>

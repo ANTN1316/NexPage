@@ -8,7 +8,7 @@ interface TestimonialCardProps {
 
 function TestimonialCard({ quote, author, role }: TestimonialCardProps) {
   return (
-    <div className="reveal polish-card rounded-2xl bg-[#7F0AD8] p-6 flex flex-col justify-between h-full">
+    <div className="reveal polish-card rounded-2xl bg-[#0B7A4B] p-6 flex flex-col justify-between h-full">
       <p className="text-[#0F0F0F] text-base lg:text-lg font-normal leading-relaxed">{quote}</p>
       <div className="mt-4 pt-4 border-t border-[#0F0F0F]/30">
         <p className="text-[#0F0F0F] text-base font-normal">{author}</p>

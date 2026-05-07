@@ -41,7 +41,7 @@
     --ring: 222.2 84% 4.9%;
 
     --radius: 0.5rem;
-    --brand: 274 91% 44%;
+    --brand: 155 83% 26%;
     --dark-bg: 0 0% 6%;
 
     --sidebar-background: 0 0% 98%;
@@ -154,15 +154,15 @@
     inset: 0;
     border-radius: inherit;
     pointer-events: none;
-    background: linear-gradient(135deg, rgba(127, 10, 216, 0.18), transparent 32%, rgba(3, 255, 136, 0.08));
+    background: linear-gradient(135deg, rgba(11, 122, 75, 0.18), transparent 32%, rgba(3, 255, 136, 0.08));
     opacity: 0;
     transition: opacity 260ms ease;
   }
 
   .polish-card:hover {
     transform: translateY(-6px);
-    border-color: rgba(127, 10, 216, 0.7);
-    box-shadow: 0 24px 70px rgba(127, 10, 216, 0.18);
+    border-color: rgba(11, 122, 75, 0.7);
+    box-shadow: 0 24px 70px rgba(11, 122, 75, 0.18);
   }
 
   .polish-card:hover::before {
@@ -190,8 +190,8 @@
 
   .polish-tile:hover {
     transform: translateY(-5px) scale(1.02);
-    border-color: rgba(127, 10, 216, 0.72);
-    box-shadow: 0 16px 34px rgba(127, 10, 216, 0.14);
+    border-color: rgba(11, 122, 75, 0.72);
+    box-shadow: 0 16px 34px rgba(11, 122, 75, 0.14);
     filter: brightness(1.12);
   }
 
@@ -231,7 +231,7 @@
     inset: 0;
     background:
       linear-gradient(180deg, transparent 0%, rgba(15, 15, 15, 0.72) 100%),
-      radial-gradient(circle at 20% 20%, rgba(127, 10, 216, 0.28), transparent 36%);
+      radial-gradient(circle at 20% 20%, rgba(11, 122, 75, 0.28), transparent 36%);
   }
 
   .feature-image {
@@ -285,7 +285,7 @@
 
   .image-tile:hover {
     transform: translateY(-5px);
-    border-color: rgba(127, 10, 216, 0.5);
+    border-color: rgba(11, 122, 75, 0.5);
     box-shadow: 0 20px 52px rgba(0, 0, 0, 0.28);
   }
 }

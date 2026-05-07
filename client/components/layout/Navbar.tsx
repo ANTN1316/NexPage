@@ -9,7 +9,7 @@ export default function Navbar() {
     <nav className="fixed top-0 left-0 right-0 z-50 bg-[#0F0F0F]/90 backdrop-blur-sm border-b border-white/5">
       <div className="max-w-[1440px] mx-auto px-6 lg:px-12 h-[80px] flex items-center justify-between">
         <Link to="/" className="text-white font-semibold text-xl tracking-tight">
-          Nex<span className="text-[#7F0AD8]">Page</span>
+          Nex<span className="text-[#0B7A4B]">Page</span>
         </Link>
 
         <div className="hidden md:flex items-center gap-8">
@@ -17,7 +17,7 @@ export default function Navbar() {
             <a
               key={item.label}
               href={item.href}
-              className="text-white text-base font-normal hover:text-[#7F0AD8] transition-colors"
+              className="text-white text-base font-normal hover:text-[#0B7A4B] transition-colors"
             >
               {item.label}
             </a>
@@ -27,13 +27,13 @@ export default function Navbar() {
         <div className="hidden md:flex items-center gap-4">
           <a
             href="#produto"
-            className="px-6 py-3 rounded-lg border border-[#7F0AD8] text-[#7F0AD8] text-base font-normal hover:bg-[#7F0AD8]/10 transition-colors whitespace-nowrap"
+            className="px-6 py-3 rounded-lg border border-[#0B7A4B] text-[#0B7A4B] text-base font-normal hover:bg-[#0B7A4B]/10 transition-colors whitespace-nowrap"
           >
             Ver demonstração
           </a>
           <a
             href="#contato"
-            className="px-6 py-3 rounded-lg border border-[#7F0AD8] bg-[#7F0AD8] text-white text-base font-normal hover:bg-[#7F0AD8]/90 transition-colors whitespace-nowrap"
+            className="px-6 py-3 rounded-lg border border-[#0B7A4B] bg-[#0B7A4B] text-white text-base font-normal hover:bg-[#0B7A4B]/90 transition-colors whitespace-nowrap"
           >
             Iniciar teste gratuito
           </a>
@@ -59,7 +59,7 @@ export default function Navbar() {
             <a
               key={item.label}
               href={item.href}
-              className="text-white text-base font-normal py-2 hover:text-[#7F0AD8] transition-colors"
+              className="text-white text-base font-normal py-2 hover:text-[#0B7A4B] transition-colors"
               onClick={() => setMenuOpen(false)}
             >
               {item.label}
@@ -68,14 +68,14 @@ export default function Navbar() {
           <div className="flex flex-col gap-3 pt-2">
             <a
               href="#produto"
-              className="w-full px-6 py-3 rounded-lg border border-[#7F0AD8] text-[#7F0AD8] text-base font-normal text-center"
+              className="w-full px-6 py-3 rounded-lg border border-[#0B7A4B] text-[#0B7A4B] text-base font-normal text-center"
               onClick={() => setMenuOpen(false)}
             >
               Ver demonstração
             </a>
             <a
               href="#contato"
-              className="w-full px-6 py-3 rounded-lg border border-[#7F0AD8] bg-[#7F0AD8] text-white text-base font-normal text-center"
+              className="w-full px-6 py-3 rounded-lg border border-[#0B7A4B] bg-[#0B7A4B] text-white text-base font-normal text-center"
               onClick={() => setMenuOpen(false)}
             >
               Iniciar teste gratuito
