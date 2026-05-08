@@ -6,29 +6,34 @@ export const brand = {
 
 export const navigationLinks = [
   { label: "Produto", href: "#produto" },
-  { label: "Recursos", href: "#recursos" },
+  { label: "Processo", href: "#processo" },
+  { label: "Portfólio", href: "#portfolio" },
   { label: "Preços", href: "#precos" },
+  { label: "FAQ", href: "#faq" },
   { label: "Contato", href: "#contato" },
 ];
 
 export const designCards = [
   {
     title: "DESIGN QUE POSICIONA",
-    description: "Uma estrutura digital pensada para atrair, engajar e converter visitantes.",
+    description:
+      "Uma estrutura digital pensada para atrair, engajar e converter visitantes.",
     image:
       "https://images.unsplash.com/photo-1553877522-43269d4ea984?auto=format&fit=crop&w=900&q=80",
     alt: "Equipe planejando estratégia digital em uma mesa de trabalho",
   },
   {
     title: "DESIGN QUE CONVERTE",
-    description: "Uma abordagem estratégica que transforma páginas comuns em ativos de vendas.",
+    description:
+      "Uma abordagem estratégica que transforma páginas comuns em ativos de vendas.",
     image:
       "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=900&q=80",
     alt: "Dashboard com métricas de crescimento e conversão",
   },
   {
     title: "DESIGN QUE ESCALA",
-    description: "Uma experiência criada para guiar cada usuário até uma decisão clara.",
+    description:
+      "Uma experiência criada para guiar cada usuário até uma decisão clara.",
     image:
       "https://images.unsplash.com/photo-1551434678-e076c223a692?auto=format&fit=crop&w=900&q=80",
     alt: "Time desenvolvendo uma experiência digital em notebooks",
@@ -78,12 +83,115 @@ export const featurePanels = [
   },
 ];
 
-export const competitors = [
-  { name: "NexPage", percentage: 97, isLeader: true },
-  { name: "PageCloud", percentage: 83, isLeader: false },
-  { name: "TurboGeek", percentage: 58, isLeader: false },
-  { name: "GoShare", percentage: 61, isLeader: false },
-  { name: "Ai Paper", percentage: 54, isLeader: false },
+export const processSteps = [
+  {
+    number: "01",
+    title: "Diagnóstico",
+    description:
+      "Mapeamos objetivo, público, oferta e pontos de conversão para definir a estrutura certa antes do design.",
+  },
+  {
+    number: "02",
+    title: "Criação",
+    description:
+      "Transformamos a estratégia em uma experiência visual clara, responsiva e alinhada ao posicionamento da marca.",
+  },
+  {
+    number: "03",
+    title: "Lançamento",
+    description:
+      "Publicamos a página com ajustes finos de performance, chamadas de ação e base preparada para evoluir.",
+  },
+];
+
+export const portfolioItems = [
+  {
+    title: "VittaLab",
+    category: "Saúde e tecnologia",
+    metric: "+42% leads",
+    image:
+      "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=1000&q=80",
+    alt: "Equipe médica analisando dados digitais",
+  },
+  {
+    title: "Orbit CRM",
+    category: "SaaS B2B",
+    metric: "3.1x conversão",
+    image:
+      "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=1000&q=80",
+    alt: "Dashboard de produto digital com gráficos",
+  },
+  {
+    title: "NovaHaus",
+    category: "Arquitetura",
+    metric: "+68% contatos",
+    image:
+      "https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=1000&q=80",
+    alt: "Escritório moderno com espaço de trabalho elegante",
+  },
+];
+
+export const pricingPlans = [
+  {
+    name: "Essencial",
+    price: "R$ 1.490",
+    description:
+      "Landing page objetiva para validar oferta e captar contatos com rapidez.",
+    features: [
+      "Página única",
+      "Design responsivo",
+      "Formulário ou WhatsApp",
+      "Entrega em até 7 dias",
+    ],
+  },
+  {
+    name: "Performance",
+    price: "R$ 2.990",
+    description:
+      "Experiência completa para marcas que precisam vender com mais clareza.",
+    featured: true,
+    features: [
+      "Estratégia de conteúdo",
+      "Seções de conversão",
+      "Otimização visual",
+      "Setup de métricas",
+    ],
+  },
+  {
+    name: "Sob medida",
+    price: "Proposta",
+    description:
+      "Projeto personalizado para empresas com funil, campanhas ou demandas específicas.",
+    features: [
+      "Arquitetura customizada",
+      "Integrações",
+      "Componentes exclusivos",
+      "Acompanhamento dedicado",
+    ],
+  },
+];
+
+export const faqItems = [
+  {
+    question: "Quanto tempo leva para entregar?",
+    answer:
+      "Projetos essenciais costumam levar até 7 dias. Projetos com mais estratégia, seções e ajustes podem variar conforme escopo.",
+  },
+  {
+    question: "A página funciona bem no celular?",
+    answer:
+      "Sim. A experiência é criada responsiva desde o início, com leitura clara, botões acessíveis e carregamento otimizado.",
+  },
+  {
+    question: "Vocês cuidam de domínio e hospedagem?",
+    answer:
+      "Podemos orientar a configuração ou assumir a publicação quando o projeto exigir esse acompanhamento.",
+  },
+  {
+    question: "Consigo editar textos depois?",
+    answer:
+      "Sim. A entrega pode incluir uma estrutura preparada para ajustes futuros, combinada conforme a necessidade do projeto.",
+  },
 ];
 
 export const testimonialImages = [

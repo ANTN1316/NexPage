@@ -14,7 +14,14 @@ interface FeaturePanelProps {
   alt: string;
 }
 
-function FeaturePanel({ tag, title, features, ctaText, image, alt }: FeaturePanelProps) {
+function FeaturePanel({
+  tag,
+  title,
+  features,
+  ctaText,
+  image,
+  alt,
+}: FeaturePanelProps) {
   return (
     <article className="reveal polish-card rounded-2xl lg:rounded-3xl border border-[#656565] p-6 lg:p-12 bg-[#101010]">
       <div className="flex flex-col lg:flex-row gap-8 lg:gap-12">
@@ -25,7 +32,9 @@ function FeaturePanel({ tag, title, features, ctaText, image, alt }: FeaturePane
               <span className="text-[#0F0F0F] text-sm font-normal">{tag}</span>
             </div>
 
-            <h3 className="text-white text-2xl lg:text-3xl font-normal leading-snug">{title}</h3>
+            <h3 className="text-white text-2xl lg:text-3xl font-normal leading-snug">
+              {title}
+            </h3>
 
             <div className="flex flex-col gap-8">
               {features.map((feature, index) => (
@@ -34,8 +43,12 @@ function FeaturePanel({ tag, title, features, ctaText, image, alt }: FeaturePane
                   className="reveal flex flex-col gap-2"
                   style={{ transitionDelay: `${index * 90}ms` }}
                 >
-                  <h4 className="text-[#0B7A4B] text-lg lg:text-xl font-semibold">{feature.label}</h4>
-                  <p className="text-white text-sm font-light leading-relaxed">{feature.description}</p>
+                  <h4 className="text-[#0B7A4B] text-lg lg:text-xl font-semibold">
+                    {feature.label}
+                  </h4>
+                  <p className="text-white text-sm font-light leading-relaxed">
+                    {feature.description}
+                  </p>
                 </div>
               ))}
             </div>
@@ -43,14 +56,14 @@ function FeaturePanel({ tag, title, features, ctaText, image, alt }: FeaturePane
 
           <a
             href="#contato"
-            className="inline-flex px-6 py-4 rounded-lg border border-[#0B7A4B] bg-[#0B7A4B] text-white text-base font-normal hover:bg-[#0B7A4B]/90 transition-colors w-fit"
+            className="fluid-link solid-button inline-flex w-fit rounded-full border px-5 py-2.5 text-sm font-normal text-white"
           >
             {ctaText}
           </a>
         </div>
 
         <div className="feature-image w-full lg:w-[55%] rounded-2xl min-h-[280px] lg:min-h-[400px]">
-          <img src={image} alt={alt} loading="lazy" />
+          <img src={image} alt={alt} loading="lazy" decoding="async" />
           <div className="feature-image__badge">
             <strong>+3.8x</strong>
             <span>mais conversões</span>

@@ -23,7 +23,7 @@ function ImageTile({ index, dark = false }: { index: number; dark?: boolean }) {
 
   return (
     <div className={`reveal image-tile rounded-2xl aspect-square ${dark ? "image-tile--dark" : ""}`}>
-      <img src={image.image} alt={image.alt} loading="lazy" />
+      <img src={image.image} alt={image.alt} loading="lazy" decoding="async" />
     </div>
   );
 }

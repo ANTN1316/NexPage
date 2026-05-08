@@ -1,75 +1,72 @@
-const cubeClasses = [
-  "border-[3px] border-[#383838]",
-  "bg-[#737373]",
-  "bg-[#303030]",
-  "bg-[#1B1B1B]",
-  "bg-[#474747]",
-  "bg-[#575757]",
-  "bg-[#1B1B1B]",
-  "bg-[#1B1B1B] hidden sm:block",
-  "bg-[#353333]",
-  "bg-[#8D8D8D]",
-  "bg-[#303030]",
-  "bg-transparent hidden sm:block",
-];
+const metrics = ["42+ projetos", "7 dias média", "97% satisfação"];
 
 export default function Hero() {
   return (
-    <section className="min-h-screen bg-[#0F0F0F] pt-[80px] overflow-hidden relative">
+    <section
+      className="relative isolate w-full bg-[#0F0F0F] overflow-hidden"
+      style={{ height: "100svh", minHeight: "100vh", contain: "paint" }}
+    >
+      <video
+        className="absolute left-1/2 top-1/2 h-auto min-h-full w-auto min-w-full -translate-x-1/2 -translate-y-1/2 object-cover"
+        autoPlay
+        muted
+        loop
+        playsInline
+        preload="metadata"
+        aria-hidden="true"
+      >
+        <source src="/15654956_1920_1080_24fps.mp4" type="video/mp4" />
+      </video>
+
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(15,15,15,0)_0%,rgba(15,15,15,0.28)_46%,rgba(15,15,15,0.88)_100%),linear-gradient(180deg,rgba(15,15,15,0.18)_0%,rgba(15,15,15,0.08)_36%,rgba(15,15,15,0.56)_70%,#0F0F0F_100%)]" />
+      <div className="absolute inset-x-0 bottom-0 h-[42vh] bg-gradient-to-b from-transparent via-[#0F0F0F]/82 to-[#0F0F0F]" />
+
       <div
         className="absolute inset-0 pointer-events-none"
+        data-parallax-speed="0.14"
         style={{
           background:
-            "radial-gradient(ellipse 60% 60% at 60% 50%, #1A1A1A 0%, transparent 70%)",
-          filter: "blur(80px)",
-          opacity: 0.8,
+            "radial-gradient(ellipse 65% 50% at 50% 68%, rgba(11, 122, 75, 0.18) 0%, transparent 68%)",
+          filter: "blur(70px)",
+          opacity: 0.9,
         }}
       />
 
       <div className="max-w-[1440px] mx-auto px-6 lg:px-12 relative z-10">
-        <div className="flex flex-col lg:flex-row items-center min-h-[calc(100vh-80px)] gap-12 py-16 lg:py-0">
-          <div className="w-full lg:w-1/2 flex justify-center lg:justify-start flex-shrink-0">
-            <div className="grid grid-cols-4 gap-3 sm:gap-4 lg:gap-[21px] w-full max-w-[520px] lg:max-w-none">
-              {cubeClasses.map((cubeClass, index) => (
-                <div
-                  key={index}
-                  className={`reveal polish-tile aspect-square rounded-xl lg:rounded-2xl ${cubeClass}`}
-                  style={{ transitionDelay: `${index * 45}ms` }}
-                />
-              ))}
-            </div>
-          </div>
-
-          <div className="w-full lg:w-1/2 flex flex-col gap-6 reveal">
-            <div className="inline-flex w-fit items-center gap-2 rounded-full border border-[#0B7A4B]/40 bg-[#0B7A4B]/10 px-4 py-2 text-xs uppercase tracking-[0.14em] text-[#5DE3A0]">
-              <span className="h-2 w-2 rounded-full bg-[#03FF88] animate-pulse" />
-              estratégia, design e código
-            </div>
-            <h1 className="text-white text-3xl sm:text-4xl lg:text-5xl font-semibold uppercase leading-tight">
+        <div
+          className="flex min-h-screen items-center justify-center px-0 py-32"
+          data-parallax-speed="0.035"
+        >
+          <div className="reveal flex w-full max-w-4xl flex-col items-center text-center">
+            <h1 className="text-white text-4xl sm:text-5xl lg:text-7xl font-semibold uppercase leading-tight max-w-4xl drop-shadow-[0_18px_50px_rgba(0,0,0,0.45)]">
               A nova era da presença digital chegou.
             </h1>
-            <p className="text-white text-base font-normal max-w-xs">
-              Descubra uma maneira totalmente nova de construir sites que convertem.
+
+            <p className="mt-5 text-white text-lg sm:text-xl font-normal max-w-2xl drop-shadow-[0_12px_32px_rgba(0,0,0,0.45)]">
+              Descubra uma maneira totalmente nova de construir sites que
+              convertem.
             </p>
-            <div className="flex flex-wrap items-center gap-4 mt-4">
+
+            <div className="mt-8 flex flex-wrap items-center justify-center gap-4">
               <a
                 href="#produto"
-                className="px-6 py-4 rounded-lg border border-[#0B7A4B] text-[#0B7A4B] text-base font-normal hover:bg-[#0B7A4B]/10 transition-colors"
+                className="fluid-link glass-button rounded-full border px-5 py-2.5 text-sm font-normal text-white"
               >
                 Ver projetos
               </a>
               <a
                 href="#contato"
-                className="px-6 py-4 rounded-lg border border-[#0B7A4B] bg-[#0B7A4B] text-white text-base font-normal hover:bg-[#0B7A4B]/90 transition-colors"
+                className="fluid-link solid-button rounded-full border px-5 py-2.5 text-sm font-normal text-white"
               >
                 Iniciar projeto
               </a>
             </div>
-            <div className="grid grid-cols-3 gap-3 pt-4 max-w-md">
-              {["42+ projetos", "7 dias média", "97% satisfação"].map((metric) => (
-                <div key={metric} className="rounded-xl border border-white/10 bg-white/[0.03] px-4 py-3 text-center text-xs text-white/70">
+
+            <div className="mt-8 flex flex-wrap items-center justify-center gap-x-6 gap-y-3 text-sm text-white">
+              {metrics.map((metric) => (
+                <span key={metric} className="whitespace-nowrap">
                   {metric}
-                </div>
+                </span>
               ))}
             </div>
           </div>

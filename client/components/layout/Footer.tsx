@@ -2,43 +2,35 @@ import { brand, navigationLinks } from "@/data/landing";
 
 export default function Footer() {
   return (
-    <footer className="bg-[#D9D9D9] py-20" id="contato">
+    <footer className="bg-[#101010] py-16 lg:py-20 border-t border-white/10">
       <div className="max-w-[1440px] mx-auto px-6 lg:px-12">
-        <div className="flex flex-col md:flex-row items-center justify-between gap-8">
-          <div>
-            <p className="text-[#0F0F0F] text-2xl font-semibold">
-              Nex<span style={{ color: "#0B7A4B" }}>{brand.highlight}</span>
-            </p>
-            <p className="text-[#0F0F0F]/60 text-sm mt-1">{brand.tagline}</p>
+        <div className="flex flex-col items-center justify-center gap-8 text-center">
+          <div className="flex flex-col items-center md:items-start">
+            <img
+              src="/GreenLogoDark.png"
+              alt={brand.name}
+              className="h-14 w-auto object-contain"
+            />
+            <p className="text-white text-sm mt-3">{brand.tagline}</p>
           </div>
 
-          <div className="flex flex-wrap gap-6 text-[#0F0F0F]/70 text-sm">
+          <div className="flex flex-wrap justify-center gap-6 text-white text-sm">
             {navigationLinks.map((item) => (
-              <a key={item.label} href={item.href} className="hover:text-[#0F0F0F] transition-colors">
+              <a
+                key={item.label}
+                href={item.href}
+                className="fluid-link hover:text-white"
+              >
                 {item.label}
               </a>
             ))}
           </div>
-
-          <div className="flex items-center gap-4">
-            <a
-              href="#produto"
-              className="px-6 py-3 rounded-lg border border-[#0B7A4B] text-[#0B7A4B] text-sm font-normal hover:bg-[#0B7A4B]/10 transition-colors"
-            >
-              Ver demonstração
-            </a>
-            <a
-              href="#contato"
-              className="px-6 py-3 rounded-lg border border-[#0B7A4B] bg-[#0B7A4B] text-white text-sm font-normal hover:bg-[#0B7A4B]/90 transition-colors"
-            >
-              Iniciar projeto
-            </a>
-          </div>
         </div>
 
-        <div className="mt-12 pt-8 border-t border-[#0F0F0F]/20">
-          <p className="text-[#0F0F0F]/40 text-xs text-center">
-            © {new Date().getFullYear()} {brand.name}. Todos os direitos reservados.
+        <div className="mt-12 pt-8 border-t border-white/10">
+          <p className="text-white text-xs text-center">
+            © {new Date().getFullYear()} {brand.name}. Todos os direitos
+            reservados.
           </p>
         </div>
       </div>
