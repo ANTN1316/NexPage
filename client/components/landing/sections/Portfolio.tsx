@@ -10,18 +10,17 @@ export default function Portfolio() {
         <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-10 lg:mb-14 reveal">
           <div>
             <p className="text-[#0B7A4B] text-sm font-semibold uppercase mb-4">
-              Portfólio
+              PROJETOS CONCLUÍDOS
             </p>
             <h2 className="text-white text-2xl sm:text-3xl lg:text-4xl font-semibold leading-snug max-w-2xl">
-              Projetos pensados para parecerem fortes antes mesmo da primeira
-              conversa.
+              Templates funcionais que demonstram técnica, performance e conversão.
             </h2>
           </div>
           <a
             href="#contato"
             className="fluid-link glass-button w-fit rounded-full border px-5 py-2.5 text-sm font-normal text-white"
           >
-            Solicitar projeto
+           Solicitar atendimento personalizado
           </a>
         </div>
 

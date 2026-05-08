@@ -6,11 +6,10 @@ export default function Pricing() {
       <div className="max-w-[1440px] mx-auto px-6 lg:px-12">
         <div className="text-center mb-10 lg:mb-14 reveal">
           <p className="text-[#0B7A4B] text-sm font-semibold uppercase mb-4">
-            Planos e preços
+            PLANOS E PREÇOS
           </p>
           <h2 className="text-white text-2xl sm:text-3xl lg:text-4xl font-semibold leading-snug max-w-3xl mx-auto">
-            Escolha o ponto de partida certo para transformar visitas em
-            oportunidades.
+           Do template pronto ao projeto personalizado: escolha o formato ideal.
           </h2>
         </div>
 

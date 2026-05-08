@@ -65,8 +65,8 @@ function FeaturePanel({
         <div className="feature-image w-full lg:w-[55%] rounded-2xl min-h-[280px] lg:min-h-[400px]">
           <img src={image} alt={alt} loading="lazy" decoding="async" />
           <div className="feature-image__badge">
-            <strong>+3.8x</strong>
-            <span>mais conversões</span>
+            <strong></strong>
+            <span>+Visibilidade imediata</span>
           </div>
         </div>
       </div>

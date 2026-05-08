@@ -1,4 +1,4 @@
-const metrics = ["42+ projetos", "7 dias média", "97% satisfação"];
+const metrics = ["Templates prontos", "Stack moderna", "Atendimento personalizado"];
 
 export default function Hero() {
   return (
@@ -39,12 +39,11 @@ export default function Hero() {
         >
           <div className="reveal flex w-full max-w-4xl flex-col items-center text-center">
             <h1 className="text-white text-4xl sm:text-5xl lg:text-7xl font-semibold uppercase leading-tight max-w-4xl drop-shadow-[0_18px_50px_rgba(0,0,0,0.45)]">
-              A nova era da presença digital chegou.
+              PORTFÓLIO TÉCNICO QUE CONVERTE VISITAS EM OPORTUNIDADES.
             </h1>
 
             <p className="mt-5 text-white text-lg sm:text-xl font-normal max-w-2xl drop-shadow-[0_12px_32px_rgba(0,0,0,0.45)]">
-              Descubra uma maneira totalmente nova de construir sites que
-              convertem.
+              Apresentação de templates funcionais, técnicos avançados e atendimentos personalizados para microempreendedores que precisam de visibilidade no mercado.
             </p>
 
             <div className="mt-8 flex flex-wrap items-center justify-center gap-4">
@@ -58,7 +57,7 @@ export default function Hero() {
                 href="#contato"
                 className="fluid-link solid-button rounded-full border px-5 py-2.5 text-sm font-normal text-white"
               >
-                Iniciar projeto
+                Solicitar atendimento
               </a>
             </div>
 

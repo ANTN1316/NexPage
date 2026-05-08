@@ -34,21 +34,17 @@ export default function DigitalEra() {
 
           <div className="w-full lg:w-1/2 flex flex-col gap-6 lg:pt-4 reveal">
             <p className="text-white text-lg lg:text-xl font-normal leading-relaxed">
-              Na construção de sites, todos nós buscamos o mesmo objetivo: transformar visitas em oportunidades reais.
-            </p>
+Microempreendedores enfrentam o desafio diário de se destacar. Nossa abordagem combina design minimalista, tecnologia avançada e atendimento personalizado.            </p>
             <p className="text-white/80 text-base font-light leading-relaxed">
-              O digital representa uma evolução clara. Não apenas de alcançar esse objetivo, mas de ampliá-lo. Nossa abordagem é baseada em um sistema único com três pilares principais projetados para elevar o nível da presença online.
-            </p>
+O site é mais que presença digital — é ferramenta de conversão. Mapeamos objetivo, público, oferta e pontos de conversão antes de qualquer linha de código            </p>
             <p className="text-white/80 text-base font-light leading-relaxed">
-              O design cria impacto imediato e reforça posicionamento de marca. A estrutura organiza informações com clareza e intenção. A performance garante velocidade, fluidez e consistência em toda navegação.
-            </p>
+Identidade visual em verde escuro e preto/branco, tipografia Inter, espaçamento padrão e estilo minimalista/moderno/comercial/premium. Performance garantida com páginas leves e responsivas.            </p>
           </div>
         </div>
 
         <div className="mt-20 lg:mt-32 text-center reveal">
           <h2 className="text-white text-2xl sm:text-3xl lg:text-4xl font-semibold leading-snug max-w-3xl mx-auto">
-            Criação de sites com foco total em resultado para empresas, marcas e negócios.
-          </h2>
+Desenvolvimento técnico avançado com foco em resultados para microempreendedores, marcas e negócios.          </h2>
         </div>
       </div>
     </section>

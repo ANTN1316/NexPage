@@ -15,25 +15,25 @@ export const navigationLinks = [
 
 export const designCards = [
   {
-    title: "DESIGN QUE POSICIONA",
+    title: "PORTFÓLIO INTERATIVO",
     description:
-      "Uma estrutura digital pensada para atrair, engajar e converter visitantes.",
+      "Apresentação visual dos templates concluídos com interação na página principal. Navegação fluida entre projetos finalizados.",
     image:
       "https://images.unsplash.com/photo-1553877522-43269d4ea984?auto=format&fit=crop&w=900&q=80",
     alt: "Equipe planejando estratégia digital em uma mesa de trabalho",
   },
   {
-    title: "DESIGN QUE CONVERTE",
+    title: "FORMULÁRIO INTEGRADO",
     description:
-      "Uma abordagem estratégica que transforma páginas comuns em ativos de vendas.",
+      "Captação de leads com integração direta via WhatsApp e API. Comunicação rápida sem fricção para o visitante.",
     image:
       "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=900&q=80",
     alt: "Dashboard com métricas de crescimento e conversão",
   },
   {
-    title: "DESIGN QUE ESCALA",
+    title: "STACK MODERNA",
     description:
-      "Uma experiência criada para guiar cada usuário até uma decisão clara.",
+      "Desenvolvimento com React, Next.js, Tailwind CSS e deploy otimizado. Performance e responsividade garantidas.",
     image:
       "https://images.unsplash.com/photo-1551434678-e076c223a692?auto=format&fit=crop&w=900&q=80",
     alt: "Time desenvolvendo uma experiência digital em notebooks",
@@ -42,9 +42,9 @@ export const designCards = [
 
 export const featurePanels = [
   {
-    tag: "Para clientes",
-    title: "Navegação simples, decisões rápidas e experiência sem fricção",
-    ctaText: "Fale com nossa equipe",
+    tag: " Para microempreendedores",
+    title: "Visibilidade, clareza e conversão sem complicação técnica",
+    ctaText: "Falar no WhatsApp",
     image:
       "https://images.unsplash.com/photo-1556761175-b413da4baf72?auto=format&fit=crop&w=1100&q=80",
     alt: "Equipe alinhando detalhes de uma interface digital",
@@ -52,32 +52,32 @@ export const featurePanels = [
       {
         label: "Serviços",
         description:
-          "Construímos páginas com hierarquia clara, leitura simples e chamadas pensadas para conversão.",
+          "Sites e landing pages com hierarquia visual clara, leitura simples e chamadas de ação pensadas para quem tem nível técnico intermediário.",
       },
       {
         label: "Projetos",
         description:
-          "Criamos experiências consistentes para marcas que precisam parecer profissionais desde o primeiro clique.",
+          "Templates responsivos e otimizados que funcionam no celular, computador e tablet. Performance garantida em qualquer dispositivo.",
       },
     ],
   },
   {
-    tag: "Para empresas",
-    title: "Atendimento direto, execução rápida e acabamento profissional",
-    ctaText: "Iniciar projeto",
+    tag: "Para investidores e parceiros",
+    title: "Código limpo, processo organizado e entrega técnica de qualidade",
+    ctaText: "Ver repositório no GitHub",
     image:
       "https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&w=1100&q=80",
     alt: "Profissionais colaborando em uma reunião criativa",
     features: [
       {
-        label: "Como funciona",
+        label: "NOSSO PROCESSO",
         description:
-          "Entendemos o objetivo, desenhamos a estrutura e desenvolvemos uma presença digital pronta para crescer.",
+          "Fluxo de trabalho com issues no GitHub, branches separadas por feature e pull requests obrigatórios. Código revisado e padronizado.",
       },
       {
         label: "Performance",
         description:
-          "Priorizamos páginas leves, responsivas e preparadas para medir cliques, tráfego e oportunidades.",
+          " ESLint e Prettier configurados, commits semânticos (feat, fix, refactor), estrutura de pastas definida. Deploy otimizado na Netlify.",
       },
     ],
   },
@@ -86,21 +86,21 @@ export const featurePanels = [
 export const processSteps = [
   {
     number: "01",
-    title: "Diagnóstico",
+    title: "REFERÊNCIAS",
     description:
-      "Mapeamos objetivo, público, oferta e pontos de conversão para definir a estrutura certa antes do design.",
+      "Análise de 3 a 5 sites de referência. Definição de animações simples e descarte de features que pesam no desempenho. Escolha do template base no Figma.",
   },
   {
     number: "02",
-    title: "Criação",
+    title: "	ESTRUTURA + DESIGN",
     description:
-      "Transformamos a estratégia em uma experiência visual clara, responsiva e alinhada ao posicionamento da marca.",
+      "Wireframe de todas as páginas, definição da identidade visual (cores, tipografia, espaçamento) e aprovação do esqueleto antes da produção.",
   },
   {
     number: "03",
-    title: "Lançamento",
+    title: "DESENVOLVIMENTO + DEPLOY",
     description:
-      "Publicamos a página com ajustes finos de performance, chamadas de ação e base preparada para evoluir.",
+      "Código com React/Next.js, Tailwind CSS, integrações de formulário e API. Deploy na Netlify com SEO básico, domínio gratuito e monitoramento via Microsoft Clarity.",
   },
 ];
 
@@ -133,15 +133,15 @@ export const portfolioItems = [
 
 export const pricingPlans = [
   {
-    name: "Essencial",
+    name: "Template Base",
     price: "R$ 1.490",
     description:
-      "Landing page objetiva para validar oferta e captar contatos com rapidez.",
+      "Landing page objetiva para validar oferta e captar contatos Template funcional com personalização rápida de cores e textos com rapidez.",
     features: [
-      "Página única",
+      "Estrutura pronta",
       "Design responsivo",
-      "Formulário ou WhatsApp",
-      "Entrega em até 7 dias",
+      "Formulário/WhatsApp",
+      "Deploy em até 7 dias",
     ],
   },
   {
