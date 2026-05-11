@@ -1,6 +1,6 @@
 import { FormEvent } from "react";
 
-const whatsappNumber = "5521983364508";
+const whatsappNumber = "5521999731008";
 
 function getFormValue(formData: FormData, key: string) {
   return String(formData.get(key) ?? "").trim();
@@ -46,11 +46,11 @@ export default function ContactForm() {
               Fale com a gente
             </p>
             <h2 className="text-white text-3xl sm:text-4xl lg:text-5xl font-semibold leading-tight">
-              Preencha o briefing rápido e continue pelo WhatsApp.
+              Conte o básico e seguimos pelo WhatsApp.
             </h2>
             <p className="mt-5 text-white/70 text-base lg:text-lg font-light leading-relaxed">
-              Assim a conversa já começa com contexto, objetivo e prioridade
-              claros para montar a melhor proposta.
+              Com poucas respostas, já entendemos o tipo de página, prazo e
+              investimento ideal.
             </p>
 
             <div className="mt-8 grid grid-cols-2 gap-4">
@@ -125,7 +125,7 @@ export default function ContactForm() {
                   name="goal"
                   type="text"
                   className="h-12 rounded-xl border border-white/10 bg-[#0F0F0F] px-4 text-white outline-none transition-colors focus:border-[#0B7A4B]"
-                  placeholder="Ex: captar leads, vender um serviço, lançar produto"
+                  placeholder="Ex: captar leads, vender serviço"
                 />
               </label>
 
@@ -175,7 +175,7 @@ export default function ContactForm() {
                   name="details"
                   rows={5}
                   className="resize-none rounded-xl border border-white/10 bg-[#0F0F0F] px-4 py-3 text-white outline-none transition-colors focus:border-[#0B7A4B]"
-                  placeholder="Conte o que você vende, quem é seu público e qualquer detalhe importante."
+                  placeholder="Conte o que você vende e quem quer alcançar."
                 />
               </label>
             </div>
@@ -184,7 +184,7 @@ export default function ContactForm() {
               type="submit"
               className="fluid-link solid-button mt-6 w-full rounded-full border px-6 py-3 text-sm font-normal text-white"
             >
-              Confirmar e falar no WhatsApp
+              Enviar pelo WhatsApp
             </button>
           </form>
         </div>

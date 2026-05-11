@@ -7,10 +7,10 @@ export default function Process() {
         <div className="flex flex-col lg:flex-row gap-10 lg:gap-20 items-start">
           <div className="w-full lg:w-[38%] reveal">
             <p className="text-[#0B7A4B] text-sm font-semibold uppercase mb-4">
-              Nosso Processo
+              Nosso processo
             </p>
             <h2 className="text-white text-2xl sm:text-3xl lg:text-4xl font-semibold leading-snug">
-              Das referências ao deploy: um fluxo técnico claro e organizado.
+              Do briefing ao site no ar, sem complicar.
             </h2>
           </div>
 

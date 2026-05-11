@@ -10,11 +10,10 @@ export default function FAQ() {
               FAQ
             </p>
             <h2 className="text-white text-2xl sm:text-3xl lg:text-4xl font-semibold leading-snug">
-              Dúvidas comuns antes de começar um projeto digital.
+              Dúvidas comuns antes de começar.
             </h2>
             <p className="mt-5 text-white/70 text-base font-light leading-relaxed">
-              A ideia é deixar o caminho claro desde o primeiro contato, com
-              escopo, prazo e entrega bem definidos.
+              Respostas rápidas sobre prazo, publicação e ajustes futuros.
             </p>
           </div>
 

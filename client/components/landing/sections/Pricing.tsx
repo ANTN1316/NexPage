@@ -9,7 +9,7 @@ export default function Pricing() {
             PLANOS E PREÇOS
           </p>
           <h2 className="text-white text-2xl sm:text-3xl lg:text-4xl font-semibold leading-snug max-w-3xl mx-auto">
-           Do template pronto ao projeto personalizado: escolha o formato ideal.
+            Escolha o formato certo para o seu momento.
           </h2>
         </div>
 

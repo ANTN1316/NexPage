@@ -13,14 +13,14 @@ export default function Portfolio() {
               PROJETOS CONCLUÍDOS
             </p>
             <h2 className="text-white text-2xl sm:text-3xl lg:text-4xl font-semibold leading-snug max-w-2xl">
-              Templates funcionais que demonstram técnica, performance e conversão.
+              Páginas pensadas para apresentar bem e gerar contato.
             </h2>
           </div>
           <a
             href="#contato"
             className="fluid-link glass-button w-fit rounded-full border px-5 py-2.5 text-sm font-normal text-white"
           >
-           Solicitar atendimento personalizado
+            Pedir orçamento
           </a>
         </div>
 
