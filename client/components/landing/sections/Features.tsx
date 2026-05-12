@@ -29,10 +29,10 @@ function FeaturePanel({
           <div className="flex flex-col gap-6">
             <div className="inline-flex items-center gap-1.5 bg-[#0B7A4B] rounded-full px-4 py-1 w-fit">
               <div className="w-2 h-2 rounded-full bg-[#0F0F0F]" />
-              <span className="text-[#0F0F0F] text-sm font-normal">{tag}</span>
+              <span className="type-ui text-ink-heading">{tag}</span>
             </div>
 
-            <h3 className="text-white text-2xl lg:text-3xl font-normal leading-snug">
+            <h3 className="type-section text-3xl lg:text-4xl">
               {title}
             </h3>
 
@@ -43,10 +43,10 @@ function FeaturePanel({
                   className="reveal flex flex-col gap-2"
                   style={{ transitionDelay: `${index * 90}ms` }}
                 >
-                  <h4 className="text-[#0B7A4B] text-lg lg:text-xl font-semibold">
+                  <h4 className="type-card-title text-lg text-ink-accent lg:text-xl">
                     {feature.label}
                   </h4>
-                  <p className="text-white text-sm font-light leading-relaxed">
+                  <p className="type-body text-sm">
                     {feature.description}
                   </p>
                 </div>
@@ -56,7 +56,7 @@ function FeaturePanel({
 
           <a
             href="#contato"
-            className="fluid-link solid-button inline-flex w-fit rounded-full border px-5 py-2.5 text-sm font-normal text-white"
+            className="fluid-link solid-button type-ui inline-flex w-fit rounded-full border px-5 py-2.5 text-ink-heading"
           >
             {ctaText}
           </a>

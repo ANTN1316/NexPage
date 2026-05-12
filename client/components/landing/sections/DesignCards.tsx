@@ -22,7 +22,7 @@ export default function DesignCards() {
               style={{ transitionDelay: `${index * 100}ms` }}
             >
               <div className="flex items-center justify-between px-5 py-5 border-b border-[#242424]">
-                <h3 className="text-white text-lg font-semibold">{card.title}</h3>
+                <h3 className="type-card-title text-lg">{card.title}</h3>
                 <DotsDecoration />
               </div>
               <div className="image-card flex-1 min-h-[220px] lg:min-h-[300px]">
@@ -35,7 +35,7 @@ export default function DesignCards() {
                 <div className="image-card__overlay" />
               </div>
               <div className="px-5 py-5 border-t border-[#242424]">
-                <p className="text-white text-base font-normal text-center">{card.description}</p>
+                <p className="type-body text-center text-base">{card.description}</p>
               </div>
             </article>
           ))}

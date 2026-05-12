@@ -11,15 +11,15 @@ export default function Footer() {
               alt={brand.name}
               className="h-14 w-auto object-contain"
             />
-            <p className="text-white text-sm mt-3">{brand.tagline}</p>
+            <p className="type-body mt-3 text-sm">{brand.tagline}</p>
           </div>
 
-          <div className="flex flex-wrap justify-center gap-6 text-white text-sm">
+          <div className="type-ui flex flex-wrap justify-center gap-6">
             {navigationLinks.map((item) => (
               <a
                 key={item.label}
                 href={item.href}
-                className="fluid-link hover:text-white"
+                className="fluid-link hover:text-ink-heading"
               >
                 {item.label}
               </a>
@@ -28,7 +28,7 @@ export default function Footer() {
         </div>
 
         <div className="mt-12 pt-8 border-t border-white/10">
-          <p className="text-white text-xs text-center">
+          <p className="type-mono text-center text-xs text-ink-muted/58">
             © {new Date().getFullYear()} {brand.name}. Todos os direitos
             reservados.
           </p>

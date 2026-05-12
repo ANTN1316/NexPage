@@ -9,16 +9,16 @@ export default function Portfolio() {
       <div className="max-w-[1440px] mx-auto px-6 lg:px-12">
         <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-10 lg:mb-14 reveal">
           <div>
-            <p className="text-[#0B7A4B] text-sm font-semibold uppercase mb-4">
+            <p className="type-eyebrow mb-4">
               PROJETOS CONCLUÍDOS
             </p>
-            <h2 className="text-white text-2xl sm:text-3xl lg:text-4xl font-semibold leading-snug max-w-2xl">
+            <h2 className="type-section max-w-2xl text-3xl sm:text-4xl lg:text-5xl">
               Páginas pensadas para apresentar bem e gerar contato.
             </h2>
           </div>
           <a
             href="#contato"
-            className="fluid-link glass-button w-fit rounded-full border px-5 py-2.5 text-sm font-normal text-white"
+            className="fluid-link glass-button type-ui w-fit rounded-full border px-5 py-2.5 text-ink-heading"
           >
             Pedir orçamento
           </a>
@@ -42,12 +42,12 @@ export default function Portfolio() {
               </div>
               <div className="p-5 border-t border-[#242424] flex items-end justify-between gap-4">
                 <div>
-                  <p className="text-white/50 text-sm">{item.category}</p>
-                  <h3 className="text-white text-xl font-semibold mt-1">
+                  <p className="type-ui text-ink-muted/62">{item.category}</p>
+                  <h3 className="type-card-title mt-1 text-xl">
                     {item.title}
                   </h3>
                 </div>
-                <span className="text-[#03FF88] text-sm font-semibold whitespace-nowrap">
+                <span className="type-mono whitespace-nowrap text-sm">
                   {item.metric}
                 </span>
               </div>

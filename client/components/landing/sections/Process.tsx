@@ -6,10 +6,10 @@ export default function Process() {
       <div className="max-w-[1440px] mx-auto px-6 lg:px-12">
         <div className="flex flex-col lg:flex-row gap-10 lg:gap-20 items-start">
           <div className="w-full lg:w-[38%] reveal">
-            <p className="text-[#0B7A4B] text-sm font-semibold uppercase mb-4">
+            <p className="type-eyebrow mb-4">
               Nosso processo
             </p>
-            <h2 className="text-white text-2xl sm:text-3xl lg:text-4xl font-semibold leading-snug">
+            <h2 className="type-section text-3xl sm:text-4xl lg:text-5xl">
               Do briefing ao site no ar, sem complicar.
             </h2>
           </div>
@@ -21,14 +21,14 @@ export default function Process() {
                 className="reveal polish-card rounded-2xl border border-[#242424] bg-[#101010] p-6 min-h-[260px] flex flex-col justify-between"
                 style={{ transitionDelay: `${index * 90}ms` }}
               >
-                <span className="text-[#03FF88] text-sm font-semibold">
+                <span className="type-mono text-sm">
                   {step.number}
                 </span>
                 <div className="mt-10">
-                  <h3 className="text-white text-xl font-semibold">
+                  <h3 className="type-card-title text-xl">
                     {step.title}
                   </h3>
-                  <p className="mt-3 text-white/70 text-sm font-light leading-relaxed">
+                  <p className="type-body mt-3 text-sm">
                     {step.description}
                   </p>
                 </div>

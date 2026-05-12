@@ -13,6 +13,31 @@ export default {
       },
     },
     extend: {
+      fontFamily: {
+        sans: [
+          "Inter",
+          "ui-sans-serif",
+          "system-ui",
+          "-apple-system",
+          "BlinkMacSystemFont",
+          "Segoe UI",
+          "sans-serif",
+        ],
+        display: [
+          "General Sans",
+          "Inter",
+          "ui-sans-serif",
+          "system-ui",
+          "sans-serif",
+        ],
+        mono: [
+          "JetBrains Mono",
+          "IBM Plex Mono",
+          "SFMono-Regular",
+          "Consolas",
+          "monospace",
+        ],
+      },
       colors: {
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
@@ -51,6 +76,15 @@ export default {
           DEFAULT: "hsl(var(--brand))",
         },
         "dark-bg": "hsl(var(--dark-bg))",
+        ink: {
+          heading: "rgb(var(--text-heading) / <alpha-value>)",
+          subheading: "rgb(var(--text-subheading) / <alpha-value>)",
+          body: "rgb(var(--text-body) / <alpha-value>)",
+          secondary: "rgb(var(--text-secondary) / <alpha-value>)",
+          muted: "rgb(var(--text-muted) / <alpha-value>)",
+          disabled: "rgb(var(--text-disabled) / <alpha-value>)",
+          accent: "rgb(var(--text-accent) / <alpha-value>)",
+        },
         sidebar: {
           DEFAULT: "hsl(var(--sidebar-background))",
           foreground: "hsl(var(--sidebar-foreground))",

@@ -43,7 +43,7 @@ export default function Navbar() {
             <a
               key={item.label}
               href={item.href}
-              className="fluid-link text-white text-sm lg:text-base font-normal hover:text-[#0B7A4B]"
+              className="fluid-link type-ui text-ink-subheading/86 hover:text-ink-accent lg:text-[15px]"
             >
               {item.label}
             </a>
@@ -51,7 +51,7 @@ export default function Navbar() {
         </div>
 
         <button
-          className="md:hidden text-white p-2"
+          className="p-2 text-ink-heading md:hidden"
           onClick={() => setMenuOpen(!menuOpen)}
           aria-label="Abrir menu"
           aria-expanded={menuOpen}
@@ -76,7 +76,7 @@ export default function Navbar() {
             <a
               key={item.label}
               href={item.href}
-              className="fluid-link text-white text-base font-normal py-2 hover:text-[#0B7A4B]"
+              className="fluid-link type-ui py-2 text-base text-ink-subheading/88 hover:text-ink-accent"
               onClick={() => setMenuOpen(false)}
             >
               {item.label}
