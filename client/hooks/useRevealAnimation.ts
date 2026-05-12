@@ -9,9 +9,17 @@ export function useRevealAnimation() {
     const observedReactiveElements = new WeakSet<HTMLElement>();
     const observedMobileCardElements = new WeakSet<HTMLElement>();
     const isMobileOrTablet = window.matchMedia("(max-width: 1024px)").matches;
+    const isLowPowerDevice =
+      window.navigator.hardwareConcurrency <= 4 ||
+      Number((window.navigator as Navigator & { deviceMemory?: number }).deviceMemory ?? 8) <=
+        4;
     const maxTiltRotation = 8;
+    const tiltFrameInterval = isLowPowerDevice ? 32 : 16;
+    const mobileFocusInterval = isLowPowerDevice ? 140 : 90;
     let frame = 0;
     let mobileCardFrame = 0;
+    let lastMobileFocusTime = 0;
+    let lastMobileFocusY = window.scrollY;
     let activeMobileCard: HTMLElement | undefined;
     const mobileCardElements = new Set<HTMLElement>();
     type TiltState = {
@@ -36,6 +44,7 @@ export function useRevealAnimation() {
       frame: number;
       enterFrame: number;
       leaveTimer: number;
+      lastFrameTime: number;
       pendingClientX?: number;
       pendingClientY?: number;
     };
@@ -114,6 +123,8 @@ export function useRevealAnimation() {
       let nextActiveCard: HTMLElement | undefined;
       let nearestDistance = Number.POSITIVE_INFINITY;
 
+      // Keep the mobile centered-card polish, but sample it at a modest cadence
+      // so low-end GPUs are not doing layout reads on every scroll tick.
       mobileCardElements.forEach((element) => {
         const rect = element.getBoundingClientRect();
         const visibleHeight =
@@ -143,6 +154,15 @@ export function useRevealAnimation() {
         return;
       }
 
+      const now = window.performance.now();
+      const scrollDelta = Math.abs(window.scrollY - lastMobileFocusY);
+
+      if (now - lastMobileFocusTime < mobileFocusInterval && scrollDelta < 24) {
+        return;
+      }
+
+      lastMobileFocusTime = now;
+      lastMobileFocusY = window.scrollY;
       mobileCardFrame = window.requestAnimationFrame(updateMobileCardFocus);
     };
 
@@ -208,6 +228,7 @@ export function useRevealAnimation() {
         frame: 0,
         enterFrame: 0,
         leaveTimer: 0,
+        lastFrameTime: 0,
       };
 
       tiltStates.set(element, state);
@@ -215,29 +236,57 @@ export function useRevealAnimation() {
     };
 
     const setTiltVariables = (element: HTMLElement, state: TiltState) => {
-      element.style.setProperty(
-        "--pointer-x",
-        `${state.targetPointerX.toFixed(2)}px`,
-      );
-      element.style.setProperty(
-        "--pointer-y",
-        `${state.targetPointerY.toFixed(2)}px`,
-      );
-      element.style.setProperty(
-        "--tilt-x",
-        `${state.targetTiltX.toFixed(2)}deg`,
-      );
-      element.style.setProperty(
-        "--tilt-y",
-        `${state.targetTiltY.toFixed(2)}deg`,
-      );
-      element.style.setProperty(
-        "--shadow-x",
-        `${state.targetShadowX.toFixed(2)}px`,
-      );
-      element.style.setProperty("--glow-x", `${state.targetGlowX.toFixed(2)}%`);
-      element.style.setProperty("--glow-y", `${state.targetGlowY.toFixed(2)}%`);
-      element.style.setProperty("--glare-opacity", state.targetGlare.toFixed(3));
+      if (state.currentPointerX !== state.targetPointerX) {
+        element.style.setProperty(
+          "--pointer-x",
+          `${state.targetPointerX.toFixed(2)}px`,
+        );
+        state.currentPointerX = state.targetPointerX;
+      }
+
+      if (state.currentPointerY !== state.targetPointerY) {
+        element.style.setProperty(
+          "--pointer-y",
+          `${state.targetPointerY.toFixed(2)}px`,
+        );
+        state.currentPointerY = state.targetPointerY;
+      }
+
+      if (state.currentTiltX !== state.targetTiltX) {
+        element.style.setProperty("--tilt-x", `${state.targetTiltX.toFixed(2)}deg`);
+        state.currentTiltX = state.targetTiltX;
+      }
+
+      if (state.currentTiltY !== state.targetTiltY) {
+        element.style.setProperty("--tilt-y", `${state.targetTiltY.toFixed(2)}deg`);
+        state.currentTiltY = state.targetTiltY;
+      }
+
+      if (state.currentShadowX !== state.targetShadowX) {
+        element.style.setProperty(
+          "--shadow-x",
+          `${state.targetShadowX.toFixed(2)}px`,
+        );
+        state.currentShadowX = state.targetShadowX;
+      }
+
+      if (state.currentGlowX !== state.targetGlowX) {
+        element.style.setProperty("--glow-x", `${state.targetGlowX.toFixed(2)}%`);
+        state.currentGlowX = state.targetGlowX;
+      }
+
+      if (state.currentGlowY !== state.targetGlowY) {
+        element.style.setProperty("--glow-y", `${state.targetGlowY.toFixed(2)}%`);
+        state.currentGlowY = state.targetGlowY;
+      }
+
+      if (state.currentGlare !== state.targetGlare) {
+        element.style.setProperty(
+          "--glare-opacity",
+          state.targetGlare.toFixed(3),
+        );
+        state.currentGlare = state.targetGlare;
+      }
     };
 
     const requestTiltFrame = (element: HTMLElement, state: TiltState) => {
@@ -245,10 +294,16 @@ export function useRevealAnimation() {
         return;
       }
 
-      state.frame = window.requestAnimationFrame(() => {
+      state.frame = window.requestAnimationFrame((timestamp) => {
         state.frame = 0;
 
         if (state.isActive) {
+          if (timestamp - state.lastFrameTime < tiltFrameInterval) {
+            requestTiltFrame(element, state);
+            return;
+          }
+
+          state.lastFrameTime = timestamp;
           setTiltVariables(element, state);
         }
       });
@@ -266,8 +321,7 @@ export function useRevealAnimation() {
         return;
       }
 
-      const rect = element.getBoundingClientRect();
-      pointerRects.set(element, rect);
+      const rect = pointerRects.get(element) ?? element.getBoundingClientRect();
       const px = Math.min(
         Math.max((clientX - rect.left) / rect.width, 0),
         1,
@@ -284,6 +338,7 @@ export function useRevealAnimation() {
       element.classList.add("is-pointer-inside");
       element.classList.add("is-pointer-moving");
       element.classList.add("is-hovered");
+      element.classList.add("is-tilt-active");
       element.classList.remove("is-leaving");
 
       state.isActive = true;
@@ -302,18 +357,6 @@ export function useRevealAnimation() {
       }
 
       requestTiltFrame(element, state);
-    };
-
-    const requestPointerUpdate = (event: PointerEvent) => {
-      if (event.pointerType === "mouse") {
-        return;
-      }
-
-      updateTiltTarget(
-        event.currentTarget as HTMLElement,
-        event.clientX,
-        event.clientY,
-      );
     };
 
     const requestMouseUpdate = (event: MouseEvent) => {
@@ -381,6 +424,7 @@ export function useRevealAnimation() {
 
         element.classList.add("is-hovered");
         element.classList.add("is-pointer-inside");
+        element.classList.add("is-tilt-active");
         element.classList.remove("is-leaving", "is-pointer-moving");
         setTiltVariables(element, state);
 
@@ -434,6 +478,7 @@ export function useRevealAnimation() {
         element.classList.remove("is-hovered");
         element.classList.remove("is-pointer-moving");
         element.classList.remove("is-pointer-inside");
+        element.classList.remove("is-tilt-active");
         element.classList.add("is-leaving");
 
         if (state.leaveTimer) {
@@ -446,47 +491,14 @@ export function useRevealAnimation() {
         }, 280);
       };
 
-      const beginTouchInteraction = (event: PointerEvent) => {
-        if (event.pointerType === "mouse") {
-          return;
-        }
-
-        beginElementInteraction(event);
-        updateTiltTarget(element, event.clientX, event.clientY);
-      };
-
-      const updateTouchInteraction = (event: PointerEvent) => {
-        if (event.pointerType === "mouse") {
-          return;
-        }
-
-        requestPointerUpdate(event);
-      };
-
-      const endTouchInteraction = (event: PointerEvent) => {
-        if (event.pointerType === "mouse") {
-          return;
-        }
-
-        resetElementInteraction();
-      };
-
       element.addEventListener("mouseenter", beginElementInteraction);
       element.addEventListener("mousemove", requestMouseUpdate);
       element.addEventListener("mouseleave", resetElementInteraction);
-      element.addEventListener("pointerdown", beginTouchInteraction);
-      element.addEventListener("pointermove", updateTouchInteraction);
-      element.addEventListener("pointerup", endTouchInteraction);
-      element.addEventListener("pointercancel", endTouchInteraction);
 
       pointerCleanups.push(() => {
         element.removeEventListener("mouseenter", beginElementInteraction);
         element.removeEventListener("mousemove", requestMouseUpdate);
         element.removeEventListener("mouseleave", resetElementInteraction);
-        element.removeEventListener("pointerdown", beginTouchInteraction);
-        element.removeEventListener("pointermove", updateTouchInteraction);
-        element.removeEventListener("pointerup", endTouchInteraction);
-        element.removeEventListener("pointercancel", endTouchInteraction);
         const state = getTiltState(element);
         if (state.frame) {
           window.cancelAnimationFrame(state.frame);
@@ -503,6 +515,7 @@ export function useRevealAnimation() {
           "is-leaving",
           "is-pointer-inside",
           "is-pointer-moving",
+          "is-tilt-active",
         );
         resetPointerPosition(element);
       });
@@ -551,13 +564,16 @@ export function useRevealAnimation() {
     observeElements(document);
     updateParallax();
     window.addEventListener("scroll", requestParallaxUpdate, { passive: true });
-    window.addEventListener("scroll", requestMobileCardFocusUpdate, {
-      passive: true,
-    });
-    window.addEventListener("resize", requestMobileCardFocusUpdate, {
-      passive: true,
-    });
-    requestMobileCardFocusUpdate();
+
+    if (isMobileOrTablet) {
+      window.addEventListener("scroll", requestMobileCardFocusUpdate, {
+        passive: true,
+      });
+      window.addEventListener("resize", requestMobileCardFocusUpdate, {
+        passive: true,
+      });
+      requestMobileCardFocusUpdate();
+    }
 
     const mutationObserver = new MutationObserver((mutations) => {
       mutations.forEach((mutation) => {
@@ -575,8 +591,11 @@ export function useRevealAnimation() {
       observer.disconnect();
       mutationObserver.disconnect();
       window.removeEventListener("scroll", requestParallaxUpdate);
-      window.removeEventListener("scroll", requestMobileCardFocusUpdate);
-      window.removeEventListener("resize", requestMobileCardFocusUpdate);
+
+      if (isMobileOrTablet) {
+        window.removeEventListener("scroll", requestMobileCardFocusUpdate);
+        window.removeEventListener("resize", requestMobileCardFocusUpdate);
+      }
       pointerCleanups.forEach((cleanup) => cleanup());
 
       if (frame) {

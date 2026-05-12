@@ -1,14 +1,22 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { Link } from "react-router-dom";
 import { navigationLinks } from "@/data/landing";
 
 export default function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [visible, setVisible] = useState(false);
+  const visibleRef = useRef(false);
 
   useEffect(() => {
     const handleScroll = () => {
-      setVisible(window.scrollY > 8);
+      const nextVisible = window.scrollY > 8;
+
+      if (visibleRef.current === nextVisible) {
+        return;
+      }
+
+      visibleRef.current = nextVisible;
+      setVisible(nextVisible);
     };
 
     handleScroll();

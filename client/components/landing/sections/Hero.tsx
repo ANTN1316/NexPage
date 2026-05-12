@@ -22,13 +22,11 @@ export default function Hero() {
       <div className="absolute inset-x-0 bottom-0 h-[42vh] bg-gradient-to-b from-transparent via-[#0F0F0F]/82 to-[#0F0F0F]" />
 
       <div
-        className="absolute inset-0 pointer-events-none"
+        className="hero-ambient-glow absolute inset-0 pointer-events-none"
         data-parallax-speed="0.14"
         style={{
           background:
             "radial-gradient(ellipse 65% 50% at 50% 68%, rgba(11, 122, 75, 0.18) 0%, transparent 68%)",
-          filter: "blur(70px)",
-          opacity: 0.9,
         }}
       />
 
