@@ -5,7 +5,7 @@ export default function DigitalEra() {
         <div className="flex flex-col lg:flex-row gap-12 lg:gap-24 items-start">
           <div className="w-full lg:w-1/2 flex-shrink-0 reveal">
             <p className="text-white text-2xl lg:text-3xl font-semibold mb-4">
-              Bem-vindo à era do digital em
+              Seu negócio com presença digital de
             </p>
             <div className="overflow-hidden">
               <p
@@ -16,7 +16,7 @@ export default function DigitalEra() {
                   WebkitTextStrokeColor: "#FFF",
                 }}
               >
-                PRIMEIRO
+                VERDADE
               </p>
               <p
                 className="font-semibold uppercase leading-none"
@@ -27,27 +27,30 @@ export default function DigitalEra() {
                   color: "transparent",
                 }}
               >
-                LUGAR!
+                NO AR.
               </p>
             </div>
           </div>
 
           <div className="w-full lg:w-1/2 flex flex-col gap-6 lg:pt-4 reveal">
             <p className="text-white text-lg lg:text-xl font-normal leading-relaxed">
-              Na construção de sites, todos nós buscamos o mesmo objetivo: transformar visitas em oportunidades reais.
+              A NexPage cria páginas objetivas para quem precisa explicar bem o
+              que vende e receber contatos com mais facilidade.
             </p>
             <p className="text-white/80 text-base font-light leading-relaxed">
-              O digital representa uma evolução clara. Não apenas de alcançar esse objetivo, mas de ampliá-lo. Nossa abordagem é baseada em um sistema único com três pilares principais projetados para elevar o nível da presença online.
+              Antes do layout, alinhamos oferta, público e ação principal. Assim
+              cada seção tem uma função clara.
             </p>
             <p className="text-white/80 text-base font-light leading-relaxed">
-              O design cria impacto imediato e reforça posicionamento de marca. A estrutura organiza informações com clareza e intenção. A performance garante velocidade, fluidez e consistência em toda navegação.
+              O resultado é um site leve, responsivo e profissional, sem excesso
+              de texto nem aparência genérica.
             </p>
           </div>
         </div>
 
         <div className="mt-20 lg:mt-32 text-center reveal">
           <h2 className="text-white text-2xl sm:text-3xl lg:text-4xl font-semibold leading-snug max-w-3xl mx-auto">
-            Criação de sites com foco total em resultado para empresas, marcas e negócios.
+            Design direto, boa performance e foco em contato real.
           </h2>
         </div>
       </div>

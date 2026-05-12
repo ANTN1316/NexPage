@@ -1,7 +1,7 @@
 export const brand = {
   name: "NexPage",
   highlight: "Page",
-  tagline: "A nova era da presença digital.",
+  tagline: "Sites claros para vender melhor.",
 };
 
 export const navigationLinks = [
@@ -15,25 +15,25 @@ export const navigationLinks = [
 
 export const designCards = [
   {
-    title: "DESIGN QUE POSICIONA",
+    title: "PORTFÓLIO INTERATIVO",
     description:
-      "Uma estrutura digital pensada para atrair, engajar e converter visitantes.",
+      "Modelos prontos para mostrar seu trabalho com clareza e navegação simples.",
     image:
       "https://images.unsplash.com/photo-1553877522-43269d4ea984?auto=format&fit=crop&w=900&q=80",
     alt: "Equipe planejando estratégia digital em uma mesa de trabalho",
   },
   {
-    title: "DESIGN QUE CONVERTE",
+    title: "CONTATO DIRETO",
     description:
-      "Uma abordagem estratégica que transforma páginas comuns em ativos de vendas.",
+      "Formulário integrado ao WhatsApp para receber pedidos com as informações certas.",
     image:
       "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=900&q=80",
-    alt: "Dashboard com métricas de crescimento e conversão",
+    alt: "Dashboard com métricas de crescimento",
   },
   {
-    title: "DESIGN QUE ESCALA",
+    title: "STACK MODERNA",
     description:
-      "Uma experiência criada para guiar cada usuário até uma decisão clara.",
+      "Sites rápidos, responsivos e preparados para publicar sem complicação.",
     image:
       "https://images.unsplash.com/photo-1551434678-e076c223a692?auto=format&fit=crop&w=900&q=80",
     alt: "Time desenvolvendo uma experiência digital em notebooks",
@@ -42,42 +42,42 @@ export const designCards = [
 
 export const featurePanels = [
   {
-    tag: "Para clientes",
-    title: "Navegação simples, decisões rápidas e experiência sem fricção",
-    ctaText: "Fale com nossa equipe",
+    tag: "Para microempreendedores",
+    title: "Uma página clara para apresentar, vender e receber contatos",
+    ctaText: "Falar no WhatsApp",
     image:
       "https://images.unsplash.com/photo-1556761175-b413da4baf72?auto=format&fit=crop&w=1100&q=80",
     alt: "Equipe alinhando detalhes de uma interface digital",
     features: [
       {
-        label: "Serviços",
+        label: "Oferta fácil de entender",
         description:
-          "Construímos páginas com hierarquia clara, leitura simples e chamadas pensadas para conversão.",
+          "Organizamos seus serviços, diferenciais e chamadas de ação em uma leitura simples.",
       },
       {
-        label: "Projetos",
+        label: "Pronta para qualquer tela",
         description:
-          "Criamos experiências consistentes para marcas que precisam parecer profissionais desde o primeiro clique.",
+          "A página funciona bem no celular, tablet e computador, com carregamento leve.",
       },
     ],
   },
   {
-    tag: "Para empresas",
-    title: "Atendimento direto, execução rápida e acabamento profissional",
-    ctaText: "Iniciar projeto",
+    tag: "Para marcas e parceiros",
+    title: "Entrega organizada, com código limpo e publicação bem feita",
+    ctaText: "Ver projetos",
     image:
       "https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&w=1100&q=80",
     alt: "Profissionais colaborando em uma reunião criativa",
     features: [
       {
-        label: "Como funciona",
+        label: "Processo claro",
         description:
-          "Entendemos o objetivo, desenhamos a estrutura e desenvolvemos uma presença digital pronta para crescer.",
+          "Briefing, estrutura, design, desenvolvimento e revisão em etapas objetivas.",
       },
       {
-        label: "Performance",
+        label: "Base técnica sólida",
         description:
-          "Priorizamos páginas leves, responsivas e preparadas para medir cliques, tráfego e oportunidades.",
+          "React, Tailwind, SEO básico, formulário integrado e deploy otimizado.",
       },
     ],
   },
@@ -86,21 +86,21 @@ export const featurePanels = [
 export const processSteps = [
   {
     number: "01",
-    title: "Diagnóstico",
+    title: "BRIEFING",
     description:
-      "Mapeamos objetivo, público, oferta e pontos de conversão para definir a estrutura certa antes do design.",
+      "Entendemos seu negócio, público, oferta e objetivo principal da página.",
   },
   {
     number: "02",
-    title: "Criação",
+    title: "DESIGN",
     description:
-      "Transformamos a estratégia em uma experiência visual clara, responsiva e alinhada ao posicionamento da marca.",
+      "Definimos estrutura, textos, cores e seções antes de iniciar o desenvolvimento.",
   },
   {
     number: "03",
-    title: "Lançamento",
+    title: "PUBLICAÇÃO",
     description:
-      "Publicamos a página com ajustes finos de performance, chamadas de ação e base preparada para evoluir.",
+      "Desenvolvemos, revisamos, conectamos o contato e colocamos a página no ar.",
   },
 ];
 
@@ -133,35 +133,35 @@ export const portfolioItems = [
 
 export const pricingPlans = [
   {
-    name: "Essencial",
+    name: "Template Base",
     price: "R$ 1.490",
     description:
-      "Landing page objetiva para validar oferta e captar contatos com rapidez.",
+      "Landing page rápida para apresentar uma oferta e receber contatos.",
     features: [
-      "Página única",
+      "Estrutura pronta",
       "Design responsivo",
       "Formulário ou WhatsApp",
-      "Entrega em até 7 dias",
+      "Deploy em até 7 dias",
     ],
   },
   {
     name: "Performance",
     price: "R$ 2.990",
     description:
-      "Experiência completa para marcas que precisam vender com mais clareza.",
+      "Página completa para vender com mais clareza e acompanhar resultados.",
     featured: true,
     features: [
-      "Estratégia de conteúdo",
-      "Seções de conversão",
+      "Texto e estrutura",
+      "Seções de venda",
       "Otimização visual",
-      "Setup de métricas",
+      "Métricas básicas",
     ],
   },
   {
     name: "Sob medida",
     price: "Proposta",
     description:
-      "Projeto personalizado para empresas com funil, campanhas ou demandas específicas.",
+      "Projeto personalizado para campanhas, funis ou necessidades específicas.",
     features: [
       "Arquitetura customizada",
       "Integrações",
@@ -175,22 +175,22 @@ export const faqItems = [
   {
     question: "Quanto tempo leva para entregar?",
     answer:
-      "Projetos essenciais costumam levar até 7 dias. Projetos com mais estratégia, seções e ajustes podem variar conforme escopo.",
+      "Projetos simples podem ficar prontos em até 7 dias. Escopos maiores variam conforme quantidade de seções e ajustes.",
   },
   {
     question: "A página funciona bem no celular?",
     answer:
-      "Sim. A experiência é criada responsiva desde o início, com leitura clara, botões acessíveis e carregamento otimizado.",
+      "Sim. O layout é feito para celular, tablet e desktop, com leitura clara e botões fáceis de acessar.",
   },
   {
     question: "Vocês cuidam de domínio e hospedagem?",
     answer:
-      "Podemos orientar a configuração ou assumir a publicação quando o projeto exigir esse acompanhamento.",
+      "Sim. Podemos orientar a configuração ou cuidar da publicação quando isso fizer parte do projeto.",
   },
   {
     question: "Consigo editar textos depois?",
     answer:
-      "Sim. A entrega pode incluir uma estrutura preparada para ajustes futuros, combinada conforme a necessidade do projeto.",
+      "Sim. A estrutura pode ser preparada para ajustes futuros, conforme a necessidade do projeto.",
   },
 ];
 
@@ -230,13 +230,13 @@ export const testimonialImages = [
 export const testimonials = [
   {
     quote:
-      "Os resultados com o novo site apareceram rápido: mais contatos, mais clareza na oferta e uma percepção muito mais profissional da marca.",
+      "A página ficou clara e começou a gerar contatos melhores já nas primeiras semanas.",
     author: "Marina Costa",
     role: "Diretora, VittaLab",
   },
   {
     quote:
-      "O projeto trouxe melhor posicionamento e impacto direto na geração de oportunidades. Um site bem estruturado muda a forma como o negócio cresce no digital.",
+      "O projeto organizou nossa oferta e deixou a marca mais profissional no digital.",
     author: "Lucas Nunes",
     role: "Founder, Orbit CRM",
   },

@@ -21,12 +21,42 @@ export function useRevealAnimation() {
         }
       | undefined;
     const pointerRects = new WeakMap<HTMLElement, DOMRect>();
+    const revealDelayTimers = new Set<number>();
+
+    const clearRevealDelay = (element: HTMLElement) => {
+      if (!element.style.transitionDelay) {
+        return;
+      }
+
+      element.style.transitionDelay = "";
+    };
 
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
-            entry.target.classList.add("is-visible");
+            const element = entry.target as HTMLElement;
+
+            element.classList.add("is-visible");
+
+            if (element.style.transitionDelay) {
+              let timer = 0;
+              const handleTransitionEnd = () => {
+                window.clearTimeout(timer);
+                revealDelayTimers.delete(timer);
+                clearRevealDelay(element);
+              };
+              timer = window.setTimeout(() => {
+                revealDelayTimers.delete(timer);
+                clearRevealDelay(element);
+              }, 1400);
+
+              revealDelayTimers.add(timer);
+              element.addEventListener("transitionend", handleTransitionEnd, {
+                once: true,
+              });
+            }
+
             observer.unobserve(entry.target);
           }
         });
@@ -226,6 +256,8 @@ export function useRevealAnimation() {
       if (pointerFrame) {
         window.cancelAnimationFrame(pointerFrame);
       }
+
+      revealDelayTimers.forEach((timer) => window.clearTimeout(timer));
     };
   }, []);
 }
