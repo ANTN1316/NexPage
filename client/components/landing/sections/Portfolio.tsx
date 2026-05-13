@@ -1,4 +1,40 @@
 import { portfolioItems } from "@/data/landing";
+import { Activity, MousePointerClick, TrendingUp, type LucideIcon } from "lucide-react";
+
+const portfolioArt: Array<{ icon: LucideIcon; label: string }> = [
+  { icon: Activity, label: "Leads" },
+  { icon: TrendingUp, label: "Conversão" },
+  { icon: MousePointerClick, label: "Contato" },
+];
+
+function PortfolioArt({
+  icon: Icon,
+  label,
+  metric,
+}: {
+  icon: LucideIcon;
+  label: string;
+  metric: string;
+}) {
+  return (
+    <div className="absolute bottom-4 right-4 z-10 min-w-[132px] rounded-xl border border-white/10 bg-[#0F0F0F]/84 p-3 shadow-[0_18px_40px_rgba(0,0,0,0.3)] backdrop-blur-md">
+      <div className="flex items-center justify-between gap-3">
+        <span className="type-ui text-[11px] text-ink-muted/62">{label}</span>
+        <Icon className="h-4 w-4 text-ink-accent" strokeWidth={1.8} />
+      </div>
+      <span className="type-mono mt-2 block text-sm">{metric}</span>
+      <div className="mt-3 flex items-end gap-1">
+        {[10, 16, 13, 22, 28].map((height, index) => (
+          <span
+            key={`${height}-${index}`}
+            className="w-full rounded-t-sm bg-[#03FF88]/45"
+            style={{ height }}
+          />
+        ))}
+      </div>
+    </div>
+  );
+}
 
 export default function Portfolio() {
   return (
@@ -32,6 +68,7 @@ export default function Portfolio() {
               style={{ transitionDelay: `${index * 100}ms` }}
             >
               <div className="image-card h-[300px] lg:h-[380px]">
+                <PortfolioArt {...portfolioArt[index]} metric={item.metric} />
                 <img
                   src={item.image}
                   alt={item.alt}

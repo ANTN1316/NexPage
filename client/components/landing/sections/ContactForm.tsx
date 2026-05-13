@@ -1,4 +1,5 @@
 import { FormEvent } from "react";
+import { Clock3, MessageCircle } from "lucide-react";
 
 const whatsappNumber = "5521999731008";
 
@@ -55,12 +56,20 @@ export default function ContactForm() {
 
             <div className="mt-8 grid grid-cols-2 gap-4">
               <div className="polish-card rounded-2xl border border-[#242424] bg-[#101010] p-5">
+                <div className="mb-5 flex items-center justify-between">
+                  <Clock3 className="h-5 w-5 text-ink-accent" strokeWidth={1.75} />
+                  <span className="h-px w-8 bg-[#03FF88]/30" />
+                </div>
                 <strong className="type-mono block text-2xl">24h</strong>
                 <span className="type-ui mt-2 block">
                   retorno médio
                 </span>
               </div>
               <div className="polish-card rounded-2xl border border-[#242424] bg-[#101010] p-5">
+                <div className="mb-5 flex items-center justify-between">
+                  <MessageCircle className="h-5 w-5 text-ink-accent" strokeWidth={1.75} />
+                  <span className="h-px w-8 bg-[#03FF88]/30" />
+                </div>
                 <strong className="type-mono block text-2xl">100%</strong>
                 <span className="type-ui mt-2 block">
                   conversa direta

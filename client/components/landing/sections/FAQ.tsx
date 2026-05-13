@@ -1,4 +1,7 @@
 import { faqItems } from "@/data/landing";
+import { Clock3, FileText, HelpCircle, PenLine, Smartphone } from "lucide-react";
+
+const faqIcons = [Clock3, Smartphone, HelpCircle, PenLine, FileText];
 
 export default function FAQ() {
   return (
@@ -25,7 +28,15 @@ export default function FAQ() {
                 style={{ transitionDelay: `${index * 70}ms` }}
               >
                 <summary className="type-card-title flex cursor-pointer list-none items-center justify-between gap-4 text-lg">
-                  {item.question}
+                  <span className="flex min-w-0 items-center gap-4">
+                    <span className="grid h-10 w-10 shrink-0 place-items-center rounded-xl border border-white/10 bg-[linear-gradient(180deg,rgba(3,255,136,0.1),rgba(255,255,255,0.02))] text-ink-accent">
+                      {(() => {
+                        const Icon = faqIcons[index % faqIcons.length];
+                        return <Icon className="h-5 w-5" strokeWidth={1.75} />;
+                      })()}
+                    </span>
+                    <span>{item.question}</span>
+                  </span>
                   <span className="grid h-8 w-8 shrink-0 place-items-center rounded-full border border-white/10 text-ink-accent transition-transform duration-300 group-open:rotate-45">
                     +
                   </span>

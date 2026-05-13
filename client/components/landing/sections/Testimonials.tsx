@@ -1,4 +1,5 @@
 import { testimonialImages, testimonials } from "@/data/landing";
+import { Quote, Stars } from "lucide-react";
 
 interface TestimonialCardProps {
   quote: string;
@@ -9,6 +10,17 @@ interface TestimonialCardProps {
 function TestimonialCard({ quote, author, role }: TestimonialCardProps) {
   return (
     <div className="reveal polish-card flex h-full flex-col justify-between rounded-2xl border border-[#0B7A4B]/70 bg-[#101611] p-6">
+      <div className="mb-6 flex items-center justify-between">
+        <div className="grid h-11 w-11 place-items-center rounded-xl border border-[#03FF88]/25 bg-[#03FF88]/10 text-ink-accent">
+          <Quote className="h-5 w-5" strokeWidth={1.75} />
+        </div>
+        <div className="flex items-center gap-1.5 rounded-full border border-white/10 bg-black/10 px-3 py-1.5">
+          <Stars className="h-3.5 w-3.5 text-ink-accent" strokeWidth={1.8} />
+          <span className="type-mono text-[10px] text-ink-muted/62">
+            Review
+          </span>
+        </div>
+      </div>
       <p className="type-body text-base text-ink-subheading/88 lg:text-lg">
         {quote}
       </p>
