@@ -1,4 +1,5 @@
 import { testimonialImages, testimonials } from "@/data/landing";
+import { Quote, Stars } from "lucide-react";
 
 interface TestimonialCardProps {
   quote: string;
@@ -8,13 +9,24 @@ interface TestimonialCardProps {
 
 function TestimonialCard({ quote, author, role }: TestimonialCardProps) {
   return (
-    <div className="reveal polish-card rounded-2xl bg-[#0B7A4B] p-6 flex flex-col justify-between h-full">
-      <p className="text-[#0F0F0F] text-base lg:text-lg font-normal leading-relaxed">
+    <div className="reveal polish-card flex h-full flex-col justify-between rounded-2xl border border-[#0B7A4B]/70 bg-[#101611] p-6">
+      <div className="mb-6 flex items-center justify-between">
+        <div className="grid h-11 w-11 place-items-center rounded-xl border border-[#03FF88]/25 bg-[#03FF88]/10 text-ink-accent">
+          <Quote className="h-5 w-5" strokeWidth={1.75} />
+        </div>
+        <div className="flex items-center gap-1.5 rounded-full border border-white/10 bg-black/10 px-3 py-1.5">
+          <Stars className="h-3.5 w-3.5 text-ink-accent" strokeWidth={1.8} />
+          <span className="type-mono text-[10px] text-ink-muted/62">
+            Review
+          </span>
+        </div>
+      </div>
+      <p className="type-body text-base text-ink-subheading/88 lg:text-lg">
         {quote}
       </p>
       <div className="mt-4 pt-4 border-t border-[#0F0F0F]/30">
-        <p className="text-[#0F0F0F] text-base font-normal">{author}</p>
-        <p className="text-[#0F0F0F] text-sm font-light">{role}</p>
+        <p className="type-card-title text-base">{author}</p>
+        <p className="type-ui mt-1">{role}</p>
       </div>
     </div>
   );
@@ -39,7 +51,7 @@ export default function Testimonials() {
     <section className="bg-[#0F0F0F] py-16 lg:py-24">
       <div className="max-w-[1440px] mx-auto px-6 lg:px-12">
         <div className="text-center mb-12 lg:mb-16 reveal">
-          <h2 className="text-white text-2xl sm:text-3xl lg:text-4xl font-semibold leading-snug">
+          <h2 className="type-section text-3xl sm:text-4xl lg:text-5xl">
             Clientes com páginas mais claras e profissionais.
           </h2>
         </div>

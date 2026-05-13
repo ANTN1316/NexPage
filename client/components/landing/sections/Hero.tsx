@@ -22,13 +22,11 @@ export default function Hero() {
       <div className="absolute inset-x-0 bottom-0 h-[42vh] bg-gradient-to-b from-transparent via-[#0F0F0F]/82 to-[#0F0F0F]" />
 
       <div
-        className="absolute inset-0 pointer-events-none"
+        className="hero-ambient-glow absolute inset-0 pointer-events-none"
         data-parallax-speed="0.14"
         style={{
           background:
             "radial-gradient(ellipse 65% 50% at 50% 68%, rgba(11, 122, 75, 0.18) 0%, transparent 68%)",
-          filter: "blur(70px)",
-          opacity: 0.9,
         }}
       />
 
@@ -38,11 +36,11 @@ export default function Hero() {
           data-parallax-speed="0.035"
         >
           <div className="reveal flex w-full max-w-4xl flex-col items-center text-center">
-            <h1 className="max-w-4xl text-4xl font-semibold uppercase leading-tight text-white drop-shadow-[0_18px_50px_rgba(0,0,0,0.45)] sm:text-5xl lg:text-7xl">
+            <h1 className="type-hero max-w-4xl text-5xl drop-shadow-[0_18px_50px_rgba(0,0,0,0.45)] sm:text-6xl lg:text-7xl">
               Sites claros para vender melhor.
             </h1>
 
-            <p className="mt-5 max-w-2xl text-lg font-normal text-white drop-shadow-[0_12px_32px_rgba(0,0,0,0.45)] sm:text-xl">
+            <p className="type-body mt-6 max-w-2xl text-lg text-ink-subheading/88 drop-shadow-[0_12px_32px_rgba(0,0,0,0.45)] sm:text-xl">
               Criamos landing pages rápidas, profissionais e prontas para
               receber clientes pelo WhatsApp.
             </p>
@@ -50,19 +48,19 @@ export default function Hero() {
             <div className="mt-8 flex flex-wrap items-center justify-center gap-4">
               <a
                 href="#produto"
-                className="fluid-link glass-button rounded-full border px-5 py-2.5 text-sm font-normal text-white"
+                className="fluid-link glass-button type-ui rounded-full border px-5 py-2.5 text-ink-heading"
               >
                 Ver projetos
               </a>
               <a
                 href="#contato"
-                className="fluid-link solid-button rounded-full border px-5 py-2.5 text-sm font-normal text-white"
+                className="fluid-link solid-button type-ui rounded-full border px-5 py-2.5 text-ink-heading"
               >
                 Pedir orçamento
               </a>
             </div>
 
-            <div className="mt-8 flex flex-wrap items-center justify-center gap-x-6 gap-y-3 text-sm text-white">
+            <div className="type-ui mt-8 flex flex-wrap items-center justify-center gap-x-6 gap-y-3 text-ink-subheading/82">
               {metrics.map((metric) => (
                 <span key={metric} className="whitespace-nowrap">
                   {metric}

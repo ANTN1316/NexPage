@@ -1,4 +1,5 @@
 import { FormEvent } from "react";
+import { Clock3, MessageCircle } from "lucide-react";
 
 const whatsappNumber = "5521999731008";
 
@@ -42,27 +43,35 @@ export default function ContactForm() {
       <div className="max-w-[1440px] mx-auto px-6 lg:px-12">
         <div className="grid grid-cols-1 lg:grid-cols-[0.85fr_1.15fr] gap-10 lg:gap-16 items-start">
           <div className="reveal">
-            <p className="text-[#0B7A4B] text-sm font-semibold uppercase mb-4">
+            <p className="type-eyebrow mb-4">
               Fale com a gente
             </p>
-            <h2 className="text-white text-3xl sm:text-4xl lg:text-5xl font-semibold leading-tight">
+            <h2 className="type-section text-3xl sm:text-4xl lg:text-5xl">
               Conte o básico e seguimos pelo WhatsApp.
             </h2>
-            <p className="mt-5 text-white/70 text-base lg:text-lg font-light leading-relaxed">
+            <p className="type-body mt-5 text-base lg:text-lg">
               Com poucas respostas, já entendemos o tipo de página, prazo e
               investimento ideal.
             </p>
 
             <div className="mt-8 grid grid-cols-2 gap-4">
-              <div className="rounded-2xl border border-[#242424] bg-[#101010] p-5">
-                <strong className="block text-[#03FF88] text-2xl">24h</strong>
-                <span className="mt-1 block text-white/60 text-sm">
+              <div className="polish-card rounded-2xl border border-[#242424] bg-[#101010] p-5">
+                <div className="mb-5 flex items-center justify-between">
+                  <Clock3 className="h-5 w-5 text-ink-accent" strokeWidth={1.75} />
+                  <span className="h-px w-8 bg-[#03FF88]/30" />
+                </div>
+                <strong className="type-mono block text-2xl">24h</strong>
+                <span className="type-ui mt-2 block">
                   retorno médio
                 </span>
               </div>
-              <div className="rounded-2xl border border-[#242424] bg-[#101010] p-5">
-                <strong className="block text-[#03FF88] text-2xl">100%</strong>
-                <span className="mt-1 block text-white/60 text-sm">
+              <div className="polish-card rounded-2xl border border-[#242424] bg-[#101010] p-5">
+                <div className="mb-5 flex items-center justify-between">
+                  <MessageCircle className="h-5 w-5 text-ink-accent" strokeWidth={1.75} />
+                  <span className="h-px w-8 bg-[#03FF88]/30" />
+                </div>
+                <strong className="type-mono block text-2xl">100%</strong>
+                <span className="type-ui mt-2 block">
                   conversa direta
                 </span>
               </div>
@@ -75,34 +84,34 @@ export default function ContactForm() {
           >
             <div className="grid grid-cols-[repeat(auto-fit,minmax(min(100%,150px),1fr))] md:grid-cols-2 gap-3 sm:gap-4">
               <label className="flex flex-col gap-2">
-                <span className="text-white/70 text-sm">Nome</span>
+                <span className="type-ui text-ink-secondary/72">Nome</span>
                 <input
                   required
                   name="name"
                   type="text"
                   autoComplete="name"
-                  className="h-12 rounded-xl border border-white/10 bg-[#0F0F0F] px-4 text-white outline-none transition-colors focus:border-[#0B7A4B]"
+                  className="h-12 rounded-xl border border-white/10 bg-[#0F0F0F] px-4 text-[15px] font-medium tracking-[-0.01em] text-ink-subheading outline-none transition-colors placeholder:text-ink-disabled/42 focus:border-[#0B7A4B]"
                   placeholder="Seu nome"
                 />
               </label>
 
               <label className="flex flex-col gap-2">
-                <span className="text-white/70 text-sm">Empresa ou marca</span>
+                <span className="type-ui text-ink-secondary/72">Empresa ou marca</span>
                 <input
                   required
                   name="company"
                   type="text"
-                  className="h-12 rounded-xl border border-white/10 bg-[#0F0F0F] px-4 text-white outline-none transition-colors focus:border-[#0B7A4B]"
+                  className="h-12 rounded-xl border border-white/10 bg-[#0F0F0F] px-4 text-[15px] font-medium tracking-[-0.01em] text-ink-subheading outline-none transition-colors placeholder:text-ink-disabled/42 focus:border-[#0B7A4B]"
                   placeholder="Nome do negócio"
                 />
               </label>
 
               <label className="flex flex-col gap-2">
-                <span className="text-white/70 text-sm">Tipo de página</span>
+                <span className="type-ui text-ink-secondary/72">Tipo de página</span>
                 <select
                   required
                   name="pageType"
-                  className="h-12 rounded-xl border border-white/10 bg-[#0F0F0F] px-4 text-white outline-none transition-colors focus:border-[#0B7A4B]"
+                  className="h-12 rounded-xl border border-white/10 bg-[#0F0F0F] px-4 text-[15px] font-medium tracking-[-0.01em] text-ink-subheading outline-none transition-colors focus:border-[#0B7A4B]"
                   defaultValue=""
                 >
                   <option value="" disabled>
@@ -117,24 +126,24 @@ export default function ContactForm() {
               </label>
 
               <label className="flex flex-col gap-2">
-                <span className="text-white/70 text-sm">
+                <span className="type-ui text-ink-secondary/72">
                   Objetivo principal
                 </span>
                 <input
                   required
                   name="goal"
                   type="text"
-                  className="h-12 rounded-xl border border-white/10 bg-[#0F0F0F] px-4 text-white outline-none transition-colors focus:border-[#0B7A4B]"
+                  className="h-12 rounded-xl border border-white/10 bg-[#0F0F0F] px-4 text-[15px] font-medium tracking-[-0.01em] text-ink-subheading outline-none transition-colors placeholder:text-ink-disabled/42 focus:border-[#0B7A4B]"
                   placeholder="Ex: captar leads, vender serviço"
                 />
               </label>
 
               <label className="flex flex-col gap-2">
-                <span className="text-white/70 text-sm">Prazo desejado</span>
+                <span className="type-ui text-ink-secondary/72">Prazo desejado</span>
                 <select
                   required
                   name="timeline"
-                  className="h-12 rounded-xl border border-white/10 bg-[#0F0F0F] px-4 text-white outline-none transition-colors focus:border-[#0B7A4B]"
+                  className="h-12 rounded-xl border border-white/10 bg-[#0F0F0F] px-4 text-[15px] font-medium tracking-[-0.01em] text-ink-subheading outline-none transition-colors focus:border-[#0B7A4B]"
                   defaultValue=""
                 >
                   <option value="" disabled>
@@ -148,13 +157,13 @@ export default function ContactForm() {
               </label>
 
               <label className="flex flex-col gap-2">
-                <span className="text-white/70 text-sm">
+                <span className="type-ui text-ink-secondary/72">
                   Investimento previsto
                 </span>
                 <select
                   required
                   name="investment"
-                  className="h-12 rounded-xl border border-white/10 bg-[#0F0F0F] px-4 text-white outline-none transition-colors focus:border-[#0B7A4B]"
+                  className="h-12 rounded-xl border border-white/10 bg-[#0F0F0F] px-4 text-[15px] font-medium tracking-[-0.01em] text-ink-subheading outline-none transition-colors focus:border-[#0B7A4B]"
                   defaultValue=""
                 >
                   <option value="" disabled>
@@ -168,13 +177,13 @@ export default function ContactForm() {
               </label>
 
               <label className="col-span-full flex flex-col gap-2">
-                <span className="text-white/70 text-sm">
+                <span className="type-ui text-ink-secondary/72">
                   Detalhes do projeto
                 </span>
                 <textarea
                   name="details"
                   rows={5}
-                  className="resize-none rounded-xl border border-white/10 bg-[#0F0F0F] px-4 py-3 text-white outline-none transition-colors focus:border-[#0B7A4B]"
+                  className="resize-none rounded-xl border border-white/10 bg-[#0F0F0F] px-4 py-3 text-[15px] font-medium leading-relaxed tracking-[-0.01em] text-ink-subheading outline-none transition-colors placeholder:text-ink-disabled/42 focus:border-[#0B7A4B]"
                   placeholder="Conte o que você vende e quem quer alcançar."
                 />
               </label>
@@ -182,7 +191,7 @@ export default function ContactForm() {
 
             <button
               type="submit"
-              className="fluid-link solid-button mt-6 w-full rounded-full border px-6 py-3 text-sm font-normal text-white"
+              className="fluid-link solid-button type-ui mt-6 w-full rounded-full border px-6 py-3 text-ink-heading"
             >
               Enviar pelo WhatsApp
             </button>

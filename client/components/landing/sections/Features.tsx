@@ -1,4 +1,11 @@
 import { featurePanels } from "@/data/landing";
+import {
+  Code2,
+  MousePointerClick,
+  PanelsTopLeft,
+  Smartphone,
+  type LucideIcon,
+} from "lucide-react";
 
 interface FeatureItem {
   label: string;
@@ -12,7 +19,19 @@ interface FeaturePanelProps {
   ctaText: string;
   image: string;
   alt: string;
+  panelIndex: number;
 }
+
+const featureArt: Array<Array<{ icon: LucideIcon; label: string }>> = [
+  [
+    { icon: MousePointerClick, label: "Oferta" },
+    { icon: Smartphone, label: "Mobile" },
+  ],
+  [
+    { icon: PanelsTopLeft, label: "Processo" },
+    { icon: Code2, label: "Código" },
+  ],
+];
 
 function FeaturePanel({
   tag,
@@ -21,6 +40,7 @@ function FeaturePanel({
   ctaText,
   image,
   alt,
+  panelIndex,
 }: FeaturePanelProps) {
   return (
     <article className="reveal polish-card rounded-2xl lg:rounded-3xl border border-[#656565] p-6 lg:p-12 bg-[#101010]">
@@ -29,10 +49,10 @@ function FeaturePanel({
           <div className="flex flex-col gap-6">
             <div className="inline-flex items-center gap-1.5 bg-[#0B7A4B] rounded-full px-4 py-1 w-fit">
               <div className="w-2 h-2 rounded-full bg-[#0F0F0F]" />
-              <span className="text-[#0F0F0F] text-sm font-normal">{tag}</span>
+              <span className="type-ui text-ink-heading">{tag}</span>
             </div>
 
-            <h3 className="text-white text-2xl lg:text-3xl font-normal leading-snug">
+            <h3 className="type-section text-3xl lg:text-4xl">
               {title}
             </h3>
 
@@ -40,15 +60,28 @@ function FeaturePanel({
               {features.map((feature, index) => (
                 <div
                   key={feature.label}
-                  className="reveal flex flex-col gap-2"
+                  className="reveal grid grid-cols-[44px_1fr] gap-4"
                   style={{ transitionDelay: `${index * 90}ms` }}
                 >
-                  <h4 className="text-[#0B7A4B] text-lg lg:text-xl font-semibold">
-                    {feature.label}
-                  </h4>
-                  <p className="text-white text-sm font-light leading-relaxed">
-                    {feature.description}
-                  </p>
+                  <div className="grid h-11 w-11 place-items-center rounded-xl border border-white/10 bg-[linear-gradient(180deg,rgba(3,255,136,0.12),rgba(255,255,255,0.025))] text-ink-accent">
+                    {(() => {
+                      const Icon = featureArt[panelIndex][index].icon;
+                      return <Icon className="h-5 w-5" strokeWidth={1.75} />;
+                    })()}
+                  </div>
+                  <div>
+                    <div className="flex items-center gap-2">
+                      <h4 className="type-card-title text-lg text-ink-accent lg:text-xl">
+                        {feature.label}
+                      </h4>
+                      <span className="type-mono hidden text-[10px] text-ink-muted/52 sm:inline">
+                        {featureArt[panelIndex][index].label}
+                      </span>
+                    </div>
+                    <p className="type-body mt-2 text-sm">
+                      {feature.description}
+                    </p>
+                  </div>
                 </div>
               ))}
             </div>
@@ -56,7 +89,7 @@ function FeaturePanel({
 
           <a
             href="#contato"
-            className="fluid-link solid-button inline-flex w-fit rounded-full border px-5 py-2.5 text-sm font-normal text-white"
+            className="fluid-link solid-button type-ui inline-flex w-fit rounded-full border px-5 py-2.5 text-ink-heading"
           >
             {ctaText}
           </a>
@@ -79,7 +112,7 @@ export default function Features() {
     <section className="bg-[#0F0F0F] py-16 lg:py-24" id="recursos">
       <div className="max-w-[1440px] mx-auto px-6 lg:px-12 flex flex-col gap-8 lg:gap-12">
         {featurePanels.map((panel, index) => (
-          <FeaturePanel key={panel.title} {...panel} />
+          <FeaturePanel key={panel.title} {...panel} panelIndex={index} />
         ))}
       </div>
     </section>
